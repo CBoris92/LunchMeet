@@ -28,7 +28,8 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"Dislike": "ui/img/others/dislike_button2.png",
 			"Rewind": "ui/img/others/rewind_button1.png",
 			"Superlike": "ui/img/others/superlike_button1.png",
-			"Favorites": "sap-icon://favorite"
+			"Favorites": "sap-icon://favorite",
+			"SubmitReview": "sap-icon://create"
 		});
 		iconModel.setDefaultBindingMode("OneWay");
 		oView.setModel(iconModel, "icon");
@@ -58,7 +59,7 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"MessagePageText":"LunchMeet",
 
 			"RestaurantAddress":"Adresse",
-			"RestaurantPrice":"Prix",
+			"RestaurantPrice":"Payé",
 			"AveragePrice":"Prix moyen",
 			"AverageRating":"Note moyenne",
 
@@ -72,7 +73,7 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 		oView.setModel(i18nModel, "i18n");
 
 		// set users model
-		var usersModel = new sap.ui.model.json.JSONModel("ui/model/users.json");
+		var usersModel = new sap.ui.model.json.JSONModel("ui/model/cards.json");
 		usersModel.setDefaultBindingMode("OneWay");
 		oView.setModel(usersModel, "users");
 

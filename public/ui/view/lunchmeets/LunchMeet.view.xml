@@ -36,7 +36,7 @@
 				</l:VerticalLayout>
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/AveragePrice}" design="Bold"/>
-		            <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state=""/>
+		            <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{}"/>
 				</l:VerticalLayout>
 				
 	        </headerContent>
@@ -80,5 +80,14 @@
 	            </ObjectPageSection>
 	        </sections>
 	    </ObjectPageLayout>
+
+	    <m:footer>
+	    	<m:Bar>
+	    		<m:contentRight>
+	    			<m:Button press="onSubmitDialog" text="{i18n>/SubmitReview}" icon="{icon>/SubmitReview}" />
+	    		</m:contentRight>
+	    	</m:Bar>
+	    </m:footer>
+
 	</m:Page>
 </core:View>

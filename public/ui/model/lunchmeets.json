@@ -1,7 +1,8 @@
 {
 	"lunchmeets" : [
 		{
-			"oId" : "001",
+			"username" : "bchen",
+			"lastname" : "Boris",
 			"restaurant" : {
 				"name": "Our kebab gourmet",
 				"address": "20 rue du Paradis, Paris 10e",
@@ -19,7 +20,8 @@
 					"lastname":"Boris",
 					"picture":"ui/img/pics/bchen.png",
 					"menu":"Rush our",
-					"comment":"Du kebab original, des produits frais, une équipe souriante."
+					"comment":"Du kebab original, des produits frais, une équipe souriante.",
+					"budget":10
 				},
 				{
 					"username":"yzhou",
@@ -27,12 +29,14 @@
 					"lastname":"Yang",
 					"picture":"ui/img/pics/yzhou.png",
 					"menu":"Box our",
-					"comment":"Alors oui c'est plus cher que piteux kebab bourré de gras et de mayonnaise."
+					"comment":"Alors oui c'est plus cher que piteux kebab bourré de gras et de mayonnaise.",
+					"budget":8
 				}
 			]
 		},
 		{
-			"oId" : "002",
+			"username" : "bchen",
+			"lastname" : "Boris",
 			"restaurant" : {
 				"name": "Osé african cuisine",
 				"address": "14 rue du Faubourg, Paris 10e",

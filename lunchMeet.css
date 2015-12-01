@@ -1,5 +1,16 @@
-.boxShadow {
+.boxShadow1 {
 	box-shadow: 5px 5px 5px 0px #c0c0c0;
+}
+
+.boxShadow2 {
+    box-shadow: 0px 2px 5px 0px #C0C0C0;
+}
+
+.labelForPic {
+	width: 11em;
+    border: 2px solid rgba(191, 191, 191, 0.37);
+    margin-top: -3px;
+    box-shadow: 0px 2px 5px 0px #C0C0C0;
 }
 
 .choicesBar {
@@ -17,6 +28,73 @@
 .noBottomBorder>.sapMITBContainerContent {
 	border-bottom: none !important;
 }
+
+/* Handle choices buttons refont */
+.choicesBar>
+.sapMBarMiddle>
+.sapMBarContainer.sapMBarPH {
+    margin-top: -10px;
+    height: 65px;	
+}
+
+/* main choices */
+.choicesBar>
+.sapMBarMiddle>
+.sapMBarContainer.sapMBarPH>
+.sapMBarChild.sapMBtn.sapMBtnBase.mainChoices {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 33px;
+    border-width: 1px;
+    height: 3.75rem;
+    width: 3.75rem;
+    box-shadow: 0px 0px 3px 1px rgb(211,211,211);
+    margin-top: 3px;
+    background-color: #F8F8FF;
+}
+
+.choicesBar>
+.sapMBarMiddle>
+.sapMBarContainer.sapMBarPH>
+.sapMBarChild.sapMBtn.sapMBtnBase.mainChoices>
+.sapMBtnDefault.sapMBtnHoverable.sapMBtnInner.sapMFocusable {
+    border: 0px solid rgb(221, 221, 221);
+    border-radius: 48px;
+    height: 3.75rem;
+    width: 3.75rem;
+    margin-top: -4px;
+    
+}
+
+.choicesBar>
+.sapMBarMiddle>
+.sapMBarContainer.sapMBarPH>
+.sapMBarChild.sapMBtn.sapMBtnBase.mainChoices>
+.sapMBtnDefault.sapMBtnHoverable.sapMBtnInner.sapMFocusable>
+.sapMBtnCustomIcon.sapMBtnIcon.sapMImg {
+	margin-top: 8px;
+}
+
+/* rewind & superlike btns */
+.choicesBar>
+.sapMBarMiddle>
+.sapMBarContainer.sapMBarPH>
+.resizeChoiceIcon.sapMBarChild.sapMBtn.sapMBtnBase>
+.sapMBtnDefault.sapMBtnHoverable.sapMBtnInner.sapMFocusable {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 20px;
+    margin-top: -5px;
+    box-shadow: 0px 0px 2px 1px rgb(211,211,211);
+}
+
+.choicesBar>
+.sapMBarMiddle>
+.sapMBarContainer.sapMBarPH>
+.resizeChoiceIcon.sapMBarChild.sapMBtn.sapMBtnBase>
+.sapMBtnDefault.sapMBtnHoverable.sapMBtnInner.sapMFocusable>
+.sapMBtnCustomIcon.sapMBtnIcon.sapMImg {
+	margin-top: 6px;
+}
+
 
 /* Applicants */
 .applicantImg {
@@ -54,4 +132,11 @@
 .sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridMedia-Std-Desktop.sapUiRespGridVSpace1>
 .sapUiRespGridSpanL4.sapUiRespGridSpanM6.sapUiRespGridSpanS12.sapUiRespGridSpanXL3 {
 	width: 100%;
+}
+
+
+/* Let's Lunch */
+.resizeCardImg {
+    width: 10rem;
+    height: 11rem;
 }

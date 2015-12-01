@@ -8,56 +8,64 @@
 		title="{i18n>/LetsLunchTitle}"
 		showNavButton="{device>/isPhone}"
 		navButtonPress="handleNavBackToMenu">
-	
-		<Panel width="auto" class="sapMTile sapUiResponsiveMargin">
-			<content>
 
-				<VBox alignItems="Center">
-					<Image src="{users>/users/0/picture}" densityAware="false" width="10em"/>
-					<Label textAlign="Center" design="Bold" text="{users>/users/0/fullname}"/>
-				</VBox>
-				<IconTabBar
-					alignItems="Center"
-					id="idIconTabBarMulti"
-					expanded="false"
-					class="noBottomBorder sapUiResponsiveContentPadding">
-					<items>
-						<IconTabFilter
-							icon="sap-icon://hint">
-							<List>
-								<StandardListItem title="Dernier LunchMeet">
-								</StandardListItem>
-							</List>
-						</IconTabFilter>
-						<IconTabFilter
-							icon="{icon>/Favorites}"
-							count="3">
-							<List>
-								<StandardListItem title="Top Resto">
-								</StandardListItem>
-							</List>
-						</IconTabFilter>
-						<IconTabFilter
-							icon="sap-icon://comment"
-							count="25">
-							<List>
-								<StandardListItem title="Dernier Commentaire">
-								</StandardListItem>
-							</List>
-						</IconTabFilter>
-					</items>
-				</IconTabBar>
-				<html:br></html:br>
-				<Bar class="choicesBar">
-					<contentMiddle>
-						<Button press="handleChoiceBtnPressed" icon="{icon>/Rewind}" 		class="resizeChoiceIcon sapUiLargeMarginEnd" />
-						<Button press="handleChoiceBtnPressed" icon="{icon>/Dislike}" 		class="sapUiMediumMarginEnd" />
-						<Button press="handleChoiceBtnPressed" icon="{icon>/Like}" 			class="sapUiLargeMarginEnd"/>
-						<Button press="handleChoiceBtnPressed" icon="{icon>/Superlike}" class="resizeChoiceIcon"	/>
-					</contentMiddle>
-				</Bar>	
-			</content>
-		</Panel>
+		<List id="ListCardsId" backgroundDesign="Transparent" items="{users>/users}">
+			<CustomListItem visible="{users>visible}" >
+				<Panel width="auto" class="sapMTile sapUiResponsiveMargin">
+					<content>
+
+						<VBox alignItems="Center">
+							<Image class="boxShadow2 resizeCardImg" src="{users>picture}" densityAware="false" />
+							<Label class="labelForPic" textAlign="Center" design="Bold" text="{users>fullname}"/>
+						</VBox>
+
+
+					 	<IconTabBar
+							alignItems="Center"
+							id="idIconTabBarMulti"
+							expanded="false"
+							class="noBottomBorder sapUiResponsiveContentPadding">
+							<items>
+								<IconTabFilter
+									icon="sap-icon://hint" expanded="true">
+									<List>
+										<StandardListItem title="Dernier LunchMeet">
+										</StandardListItem>
+									</List>
+								</IconTabFilter>
+								<IconTabFilter
+									icon="{icon>/Favorites}"
+									count="3">
+									<List>
+										<StandardListItem title="Top Resto">
+										</StandardListItem>
+									</List>
+								</IconTabFilter>
+								<IconTabFilter
+									icon="sap-icon://comment"
+									count="25">
+									<List>
+										<StandardListItem title="Dernier Commentaire">
+										</StandardListItem>
+									</List>
+								</IconTabFilter>
+							</items>
+						</IconTabBar>
+
+						<l:HorizontalLayout></l:HorizontalLayout>
+						<Bar class="choicesBar">
+							<contentMiddle>
+								<Button press="handleChoiceBtnPressed" icon="{icon>/Rewind}" 		class="resizeChoiceIcon" />
+								<Button press="handleChoiceBtnPressed" icon="{icon>/Dislike}" 		class="mainChoices sapUiMediumMarginEnd" />
+								<Button press="handleChoiceBtnPressed" icon="{icon>/Like}" 			class="mainChoices"/>
+								<Button press="handleChoiceBtnPressed" icon="{icon>/Superlike}" class="resizeChoiceIcon"	/>
+							</contentMiddle>
+						</Bar>	
+					</content>
+				</Panel>
+			</CustomListItem>
+		</List>
+
 		<footer>
 			
 		</footer>
