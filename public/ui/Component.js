@@ -2,7 +2,15 @@ jQuery.sap.declare("ui.Component");
 
 sap.ui.core.UIComponent.extend("ui.Component", {
 
-	createContent : function() {
+	onInit : function () {
+		sap.ui.getCore().getEventBus().subscribe('handleNavMenuListSelect', 'press',
+			function (channel, event, data){
+				this.handleNavMenuListSelect(data);
+			}.bind(this)
+		);
+	},
+
+	createContent : function () {
 
 		// create root view
 		var oView = sap.ui.view({
@@ -29,7 +37,9 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"Rewind": "ui/img/others/rewind_button1.png",
 			"Superlike": "ui/img/others/superlike_button1.png",
 			"Favorites": "sap-icon://favorite",
-			"SubmitReview": "sap-icon://create"
+			"SubmitReview": "sap-icon://create",
+			"Edit": "sap-icon://edit",
+			"PreferenceLevel2": "sap-icon://drop-down-list"
 		});
 		iconModel.setDefaultBindingMode("OneWay");
 		oView.setModel(iconModel, "icon");
@@ -42,11 +52,11 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"DashboardTitle":"Dashboard",
 			"LetsLunchTitle":"Let's Lunch !",
 			"PreferencesTitle":"Preferences",
-			"PreferenceTitle":"Preference",
 
 			"TypeCuisine":"Cuisine",
 			"TypeRestauration":"Type de Restauration",
 			"TempsPrefere":"Temps préféré",
+			"Budget":"Budget",
 
 			"NavMenuTitle":"Navigation",
 			"ShowHideMenu":"Show/Hide",
@@ -67,7 +77,9 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"Users":"Participants",
 
 			"NoImageFound":"Image introuvable",
-			"NoDataFound":"Ah tiens, il manque des données ici !"
+			"NoDataFound":"Ah tiens, il manque des données ici !",
+
+			"Edit": "Edit"
 		});
 		i18nModel.setDefaultBindingMode("OneWay");
 		oView.setModel(i18nModel, "i18n");
@@ -82,6 +94,11 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 		lunchmeetsModel.setDefaultBindingMode("TwoWay");
 		oView.setModel(lunchmeetsModel, "lunchmeets");
 		sap.ui.getCore().setModel(lunchmeetsModel, "lunchmeets");
+
+		// set cuisines model
+		var cuisinesModel = new sap.ui.model.json.JSONModel("ui/model/cuisines.json");
+		cuisinesModel.setDefaultBindingMode("OneWay");
+		oView.setModel(cuisinesModel, "cuisines");
 
 		// set device model
 		var deviceModel = new sap.ui.model.json.JSONModel({

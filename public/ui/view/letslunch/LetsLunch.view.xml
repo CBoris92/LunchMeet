@@ -11,7 +11,7 @@
 
 		<List id="ListCardsId" backgroundDesign="Transparent" items="{users>/users}">
 			<CustomListItem visible="{users>visible}" >
-				<Panel width="auto" class="sapMTile sapUiResponsiveMargin">
+				<Panel width="auto" class="sapMTile sapUiResponsiveMargin" >
 					<content>
 
 						<VBox alignItems="Center">

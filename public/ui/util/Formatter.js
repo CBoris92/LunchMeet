@@ -19,5 +19,18 @@ ui.util.Formatter = {
 		} else {
 			return value;
 		}
+	},
+
+	priceStatus : function (oBudget, oPrice) {
+		if (oBudget) {
+			// case when the price is above budget
+			if (oPrice > oBudget + 5) {
+				return "Error";
+			} else if (oPrice <= oBudget + 3) {
+				return "Success";
+			} else {
+				return "Warning";
+			}
+		} 
 	}	
 };

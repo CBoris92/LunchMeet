@@ -22,6 +22,9 @@ sap.ui.controller("ui.view.NavMenu", {
 		    case i18nModel.oData.LunchMeetsTitle:
 		        this.nav.to("lunchmeets.LunchMeets");
 		        break;
+		    case i18nModel.oData.PreferencesTitle:
+		        this.nav.to("preferences.Preferences");
+		        break;    
 		}
 		// deselect the previous selected item
 		this.getView().byId('NavMenuList').setSelectedItem(selectedItem, false);

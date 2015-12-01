@@ -36,7 +36,10 @@
 				</l:VerticalLayout>
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/AveragePrice}" design="Bold"/>
-		            <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{}"/>
+		            <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
+		            	{path:'/budget'},
+		            	{path:'/restaurant/averagePrice'}
+		             ], formatter:'ui.util.Formatter.priceStatus'}"/>
 				</l:VerticalLayout>
 				
 	        </headerContent>
@@ -49,7 +52,10 @@
 	                    		<l:VerticalLayout></l:VerticalLayout>
 	                    		<l:VerticalLayout class="infosFirstLayout">
 					        		<m:Label text="{i18n>/RestaurantPrice}" design="Bold"/>
-						            <m:ObjectNumber number="{/price}" numberUnit="{/priceUnit}" emphasized="false" state="Success"/>
+						            <m:ObjectNumber number="{/price}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
+		            	{path:'/budget'},
+		            	{path:'/price'}
+		             ], formatter:'ui.util.Formatter.priceStatus'}"/>
 							</l:VerticalLayout>
 							</blocks>
 	                    </ObjectPageSubSection>

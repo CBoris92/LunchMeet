@@ -3,6 +3,7 @@
 		{
 			"username" : "bchen",
 			"lastname" : "Boris",
+			"budget":8,
 			"restaurant" : {
 				"name": "Our kebab gourmet",
 				"address": "20 rue du Paradis, Paris 10e",
@@ -11,7 +12,7 @@
 				"averagePrice": 11
 			},
 			"date": "2015-11-25",
-			"price": 10,
+			"price": 12.5,
 			"priceUnit": "EUR",
 			"applicants" : [
 				{
@@ -20,8 +21,7 @@
 					"lastname":"Boris",
 					"picture":"ui/img/pics/bchen.png",
 					"menu":"Rush our",
-					"comment":"Du kebab original, des produits frais, une équipe souriante.",
-					"budget":10
+					"comment":"Du kebab original, des produits frais, une équipe souriante."
 				},
 				{
 					"username":"yzhou",
@@ -29,14 +29,14 @@
 					"lastname":"Yang",
 					"picture":"ui/img/pics/yzhou.png",
 					"menu":"Box our",
-					"comment":"Alors oui c'est plus cher que piteux kebab bourré de gras et de mayonnaise.",
-					"budget":8
+					"comment":"Alors oui c'est plus cher que piteux kebab bourré de gras et de mayonnaise."
 				}
 			]
 		},
 		{
 			"username" : "bchen",
 			"lastname" : "Boris",
+			"budget":8,
 			"restaurant" : {
 				"name": "Osé african cuisine",
 				"address": "14 rue du Faubourg, Paris 10e",
@@ -47,6 +47,31 @@
 			"date": "2015-11-24",
 			"price": 11,
 			"priceUnit": "EUR"
+		},
+		{
+			"username" : "bchen",
+			"lastname" : "Boris",
+			"budget":8,
+			"restaurant" : {
+				"name": "Bulma asian cuisine",
+				"address": "56 rue des petites écuries, Paris 10e",
+				"picture": "ui/img/restaurants/ose.png",
+				"averageRating": 2.5,
+				"averagePrice": 10
+			},
+			"date": "2015-11-30",
+			"price": 6,
+			"priceUnit": "EUR",
+			"applicants" : [
+				{
+					"username":"bchen",
+					"fullname":"Boris Chen",
+					"lastname":"Boris",
+					"picture":"ui/img/pics/bchen.png",
+					"menu":"Rush our",
+					"comment":"Du kebab original, des produits frais, une équipe souriante."
+				}
+			]
 		}
 	]
 }

@@ -26,7 +26,13 @@
 				press="handleListItemPress"
 				title="{lunchmeets>restaurant/name}"
 				number="{lunchmeets>price}"
-				numberUnit="{lunchmeets>priceUnit}" >
+				numberUnit="{lunchmeets>priceUnit}"
+				numberState="{
+					parts:[
+						{path:'lunchmeets>budget'},
+						{path:'lunchmeets>price'}
+					], formatter:'ui.util.Formatter.priceStatus'}"
+				class="statusWarning" >
 				<attributes>
 					<ObjectAttribute text="{lunchmeets>restaurant/address}" />
 				</attributes>

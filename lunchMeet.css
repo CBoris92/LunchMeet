@@ -140,3 +140,11 @@
     width: 10rem;
     height: 11rem;
 }
+
+.sapMObjLNumberStateWarning  {
+    color: rgb(209, 146, 0);
+}
+
+.myImg {
+    background-image: url(ui/img/others/nope.png);
+}

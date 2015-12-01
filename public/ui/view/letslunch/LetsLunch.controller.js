@@ -30,11 +30,6 @@ sap.ui.controller("ui.view.letslunch.LetsLunch", {
 	 */
 	handleChoiceBtnPressed : function(evt) {
 
-		// function ExceptionCards(message) {
-		//    this.message = message;
-		//    this.name = "ExceptionCards";
-		// };
-
 		// get icon value from the pressed btn and data from icon model
 		this._oChoice = evt.getSource().getProperty('icon');
 		var oIconModel = this.getView().getModel('icon');
