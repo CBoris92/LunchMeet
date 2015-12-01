@@ -1,0 +1,6 @@
+<core:View
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<MessagePage title="{i18n>/MessagePageHeader}" description="{i18n>/MessagePageDescription}" text="{i18n>/MessagePageText}" icon="{icon>/LetsLunch}" >
+	</MessagePage>
+</core:View>

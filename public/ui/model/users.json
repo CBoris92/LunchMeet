@@ -1,0 +1,22 @@
+{
+	"users": [
+		{
+			"fullname": "Boris Chen",
+			"username": "bchen",
+			"picture": "ui/img/pics/bchen.png",
+			"badges": [
+				{
+					"name": "Sushi",
+					"level": "2",
+					"icon": "SushiLoverIcon"
+				}
+			],
+			"restaurants": [
+				{
+					"name": "restaurant1",
+					"address": "15 rue Martel, Paris 10e"	
+				}
+			]
+		}
+	]
+}

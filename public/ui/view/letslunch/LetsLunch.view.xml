@@ -1,0 +1,65 @@
+<core:View
+	controllerName="ui.view.letslunch.LetsLunch"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout">
+	<Page
+		title="{i18n>/LetsLunchTitle}"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavBackToMenu">
+	
+		<Panel width="auto" class="sapMTile sapUiResponsiveMargin">
+			<content>
+
+				<VBox alignItems="Center">
+					<Image src="{users>/users/0/picture}" densityAware="false" width="10em"/>
+					<Label textAlign="Center" design="Bold" text="{users>/users/0/fullname}"/>
+				</VBox>
+				<IconTabBar
+					alignItems="Center"
+					id="idIconTabBarMulti"
+					expanded="false"
+					class="noBottomBorder sapUiResponsiveContentPadding">
+					<items>
+						<IconTabFilter
+							icon="sap-icon://hint">
+							<List>
+								<StandardListItem title="Dernier LunchMeet">
+								</StandardListItem>
+							</List>
+						</IconTabFilter>
+						<IconTabFilter
+							icon="{icon>/Favorites}"
+							count="3">
+							<List>
+								<StandardListItem title="Top Resto">
+								</StandardListItem>
+							</List>
+						</IconTabFilter>
+						<IconTabFilter
+							icon="sap-icon://comment"
+							count="25">
+							<List>
+								<StandardListItem title="Dernier Commentaire">
+								</StandardListItem>
+							</List>
+						</IconTabFilter>
+					</items>
+				</IconTabBar>
+				<html:br></html:br>
+				<Bar class="choicesBar">
+					<contentMiddle>
+						<Button press="handleChoiceBtnPressed" icon="{icon>/Rewind}" 		class="resizeChoiceIcon sapUiLargeMarginEnd" />
+						<Button press="handleChoiceBtnPressed" icon="{icon>/Dislike}" 		class="sapUiMediumMarginEnd" />
+						<Button press="handleChoiceBtnPressed" icon="{icon>/Like}" 			class="sapUiLargeMarginEnd"/>
+						<Button press="handleChoiceBtnPressed" icon="{icon>/Superlike}" class="resizeChoiceIcon"	/>
+					</contentMiddle>
+				</Bar>	
+			</content>
+		</Panel>
+		<footer>
+			
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,57 @@
+.boxShadow {
+	box-shadow: 5px 5px 5px 0px #c0c0c0;
+}
+
+.choicesBar {
+	background-color: rgb(255,255,255) !important;
+	box-shadow: none !important;
+}
+
+.resizeChoiceIcon>
+.sapMBtnDefault.sapMBtnHoverable.sapMBtnInner.sapMFocusable>
+.sapMBtnCustomIcon.sapMBtnIcon.sapMImg {
+	width: 1.375rem;
+	max-height: 1.375rem;
+}
+
+.noBottomBorder>.sapMITBContainerContent {
+	border-bottom: none !important;
+}
+
+/* Applicants */
+.applicantImg {
+	border-radius: 25px;
+    height: 50px;
+    width: 50px;
+}
+
+.applicantFirstLayout {
+	padding-top: 10px;
+}
+
+.applicantComment {
+	font-family: "Calibri", Sans-Serif;
+	font-size: 13px;
+}
+
+/* Restaurant */
+.restaurantAverageRating {
+	margin-top: -10px;
+    margin-left: -3px;
+}
+
+.infosFirstLayout {
+    margin-left: 8px;
+}
+
+
+.infosFirstSubSection>
+.sapUiResponsiveMargin.sapUxAPBlockContainer.ui-helper-clearfix>
+.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridMedia-Std-Desktop.sapUiRespGridVSpace1>
+.sapUiRespGridSpanL4.sapUiRespGridSpanM6.sapUiRespGridSpanS12.sapUiRespGridSpanXL3,
+.usersFirstSubSection>
+.sapUiResponsiveMargin.sapUxAPBlockContainer.ui-helper-clearfix>
+.sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridMedia-Std-Desktop.sapUiRespGridVSpace1>
+.sapUiRespGridSpanL4.sapUiRespGridSpanM6.sapUiRespGridSpanS12.sapUiRespGridSpanXL3 {
+	width: 100%;
+}
