@@ -72,7 +72,7 @@ sap.ui.controller("ui.view.login.Login", {
 	                lunchmeeters        
 	            );
 				if (oUser.oData[0].password == _oPassword) {
-					sap.m.MessageToast.show("Bienvenue "+ oUser.oData[0].shortname +" !");
+					sap.m.MessageToast.show("Bienvenue "+ oUser.oData[0].lastname +" !");
 					// go to Nav Menu page
 					sap.ui.getCore().getEventBus().publish('nav', 'menu', {isMaster: true, userModel: oUser});
 				} else {

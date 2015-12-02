@@ -13,9 +13,10 @@ sap.ui.controller("ui.view.lunchmeets2.LunchMeets2", {
 	},
 
 	onAfterRendering : function () {
-		// var elem = document.getElementsByClassName("objectStatus");
-		// var value = "Apprové";
+		this.handleStatusStyleClass();
+	},
 
+	handleStatusStyleClass : function () {
 		var aItems = this.getView().byId('LunchMeetsList').getItems(); 
 
 		for (var i=0; i<aItems.length; i++) {
@@ -43,11 +44,30 @@ sap.ui.controller("ui.view.lunchmeets2.LunchMeets2", {
 	},
 	
 	handleListSelect : function (evt) {
-		var context = (evt.getParameter("listItem").getBindingContext('lunchmeets') || evt.getSource().getBindingContext('lunchmeets'));
+		var context = (evt.getParameter("listItem").getBindingContext() || evt.getSource().getBindingContext());
 		// nav to detail page
-		this.nav.to("lunchmeets2.LunchMeet2");
+		this.nav.to("lunchmeets2.LunchMeet2", context);
 		// send the object data model through eventbus 
 		sap.ui.getCore().getEventBus().publish("handleLunchMeetModel", "setModel", context);
 		this.getView().byId('LunchMeetsList').setSelectedItem(evt.getParameter("listItem"), false);
+	},
+
+	handleSearch : function (evt) {
+		
+		// create model filter
+		var filters = [];
+		var query = evt.getParameter("query");
+		if (query && query.length > 0) {
+			var filter = new sap.ui.model.Filter("restaurant/name", sap.ui.model.FilterOperator.Contains, query);
+			filters.push(filter);
+		}
+		
+		// update list binding
+		var list = this.getView().byId("LunchMeetsList");
+		var binding = list.getBinding("items");
+		binding.filter(filters);
+
+		// handle status style class
+		this.handleStatusStyleClass();
 	}
 });

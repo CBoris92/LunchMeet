@@ -57,6 +57,7 @@ if (Meteor.isServer){
                     "password": "bchen*",
                     "fullname": "Boris Chen",
                     "lastname": "Boris",
+                    "budget": 8,
                     "lunchmeets": [
                         {
                             "oId": "bchen1",
@@ -66,11 +67,17 @@ if (Meteor.isServer){
                             "lunchmeeters": [
                                 {
                                     "username": "bchen",
-                                    "status": "author"
+                                    "status": "author",
+                                    "picture": "ui/img/pics/bchen.png",
+                                    "lastname": "Boris",
+                                    "comment": "Décor rétro, ce restaurant nous transporte dans les années 80"
                                 },
                                 {
                                     "username": "yzhou",
-                                    "status": "approver"
+                                    "status": "approver",
+                                    "picture": "ui/img/pics/yzhou.png",
+                                    "lastname": "Yang", 
+                                    "comment": ""
                                 }
                             ],
                             "restaurant" : {
@@ -89,19 +96,23 @@ if (Meteor.isServer){
                             "lunchmeeters": [
                                 {
                                     "username": "bchen",
-                                    "status": "author"
+                                    "status": "author",
+                                    "picture": "ui/img/pics/bchen.png",
+                                    "lastname": "Boris" 
                                 },
                                 {
                                     "username": "yzhou",
-                                    "status": "approver"
+                                    "status": "approver",
+                                    "picture": "ui/img/pics/yzhou.png",
+                                    "lastname": "Yang" 
                                 }
                             ],
                             "restaurant" : {
-                                "name": "Our kebab gourmet",
+                                "name": "Ose african cuisine",
                                 "address": "20 rue du Paradis, Paris 10e",
                                 "picture": "ui/img/restaurants/our.png",
                                 "averageRating": 2,
-                                "averagePrice": 11
+                                "averagePrice": 6
                             }
                         },
                         {
@@ -112,19 +123,23 @@ if (Meteor.isServer){
                             "lunchmeeters": [
                                 {
                                     "username": "bchen",
-                                    "status": "author"
+                                    "status": "author",
+                                    "picture": "ui/img/pics/bchen.png",
+                                    "lastname": "Boris" 
                                 },
                                 {
                                     "username": "yzhou",
-                                    "status": "approver"
+                                    "status": "approver",
+                                    "picture": "ui/img/pics/yzhou.png",
+                                    "lastname": "Yang" 
                                 }
                             ],
                             "restaurant" : {
-                                "name": "Our kebab gourmet",
+                                "name": "Tortillas Mexican",
                                 "address": "20 rue du Paradis, Paris 10e",
                                 "picture": "ui/img/restaurants/our.png",
                                 "averageRating": 2,
-                                "averagePrice": 11
+                                "averagePrice": 9
                             }
                         },
                         {
@@ -135,19 +150,23 @@ if (Meteor.isServer){
                             "lunchmeeters": [
                                 {
                                     "username": "bchen",
-                                    "status": "author"
+                                    "status": "author",
+                                    "picture": "ui/img/pics/bchen.png",
+                                    "lastname": "Boris" 
                                 },
                                 {
                                     "username": "yzhou",
-                                    "status": "approver"
+                                    "status": "approver",
+                                    "picture": "ui/img/pics/yzhou.png",
+                                    "lastname": "Yang" 
                                 }
                             ],
                             "restaurant" : {
-                                "name": "Our kebab gourmet",
+                                "name": "Bulma",
                                 "address": "20 rue du Paradis, Paris 10e",
                                 "picture": "ui/img/restaurants/our.png",
                                 "averageRating": 2,
-                                "averagePrice": 11
+                                "averagePrice": 112
                             }
                         }
                     ]

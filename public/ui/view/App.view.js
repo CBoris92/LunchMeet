@@ -13,13 +13,13 @@ sap.ui.jsview("ui.view.App", {
 		this.app = new sap.m.SplitApp("splitApp");
 
 		// load the master page
-		// var master = sap.ui.xmlview("Login", "ui.view.login.Login");
-		// master.getController().nav = this.getController();
-		// this.app.addPage(master, true);
-
-		var master = sap.ui.xmlview("LunchMeets2", "ui.view.lunchmeets2.LunchMeets2");
+		var master = sap.ui.xmlview("Login", "ui.view.login.Login");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
+
+		// var master = sap.ui.xmlview("LunchMeets2", "ui.view.lunchmeets2.LunchMeets2");
+		// master.getController().nav = this.getController();
+		// this.app.addPage(master, true);
 
 		// var master = sap.ui.xmlview("LetsLunch2", "ui.view.letslunch2.LetsLunch2");
 		// master.getController().nav = this.getController();

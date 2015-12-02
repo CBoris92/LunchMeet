@@ -114,7 +114,7 @@
 
 /* Restaurant */
 .restaurantAverageRating {
-	margin-top: -10px;
+	margin-top: -4px;
     margin-left: -3px;
 }
 
@@ -192,7 +192,7 @@
 
 .sapMObjLStatusDiv {
     height: 25px;
-    margin-top: 21px;
+    /*margin-top: 21px;*/
 }
 
 .lunchmeetsAuthorLabel>.sapMText {
@@ -203,3 +203,26 @@
 /*.sapMText {
     font-family: "Calibri", Sans-Serif;
 }*/
+
+.sapMLIBActive span {
+    box-shadow: 0px 0px !important;
+    position: relative;
+    top: 2px;
+    left: -2px;
+}
+
+.LunchMeetListItem>
+.sapMLIBContent>
+.sapMObjLTopRow>
+.sapMObjLIconDiv>
+.sapMImg {
+    border-radius: 25px;
+    width: 3rem!important;
+    height: 3rem!important;
+}
+
+.lunchmeetsDate {
+    position: relative;
+    top: -26px;
+    left: 62px;
+}

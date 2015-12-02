@@ -32,14 +32,20 @@
 				</l:VerticalLayout>
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/AverageRating}" design="Bold"/>
-	        		<m:RatingIndicator enabled="false" maxValue="3" class="restaurantAverageRating sapUiSmallMarginBottom" value="{/restaurant/averageRating}" />
+	        		<m:RatingIndicator iconSize="1rem" enabled="false" maxValue="3" class="restaurantAverageRating sapUiSmallMarginBottom" value="{/restaurant/averageRating}" />
 				</l:VerticalLayout>
 				<l:VerticalLayout>
-	        		<m:Label text="{i18n>/AveragePrice}" design="Bold"/>
-		            <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
+	        		<m:Label text="{i18n>/Budget}" design="Bold"/>
+	        		<core:InvisibleText text="{path:'/restaurant/averagePrice', formatter:'ui.util.Formatter.setBudgetIcons'}" />
+		           <!--  <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
 		            	{path:'/budget'},
 		            	{path:'/restaurant/averagePrice'}
-		             ], formatter:'ui.util.Formatter.priceStatus'}"/>
+		             ], formatter:'ui.util.Formatter.priceStatus'}"/> -->
+		             <m:HBox alignItems="">
+			            <core:Icon id="idIconSmallBudget" src="lead-outdated" visible="false"/>
+			            <core:Icon id="idIconMediumBudget" src="lead-outdated" visible="false"/>
+			            <core:Icon id="idIconLargeBudget" src="lead-outdated" visible="false"/>
+		        	</m:HBox>
 				</l:VerticalLayout>
 				
 	        </headerContent>
@@ -62,11 +68,11 @@
 	                </subSections>
 	            </ObjectPageSection>
 
-	            <ObjectPageSection title="{i18n>/Users}">
+	            <ObjectPageSection title="Lunchmeeters">
 	            	<subSections>
 	            		<ObjectPageSubSection class="usersFirstSubSection" title=" ">
 	                        <blocks>
-	                        	<m:List noDataText="{i18n>/NoDataFound}" items="{/applicants}">
+	                        	<m:List noDataText="{i18n>/NoDataFound}" items="{/lunchmeeters}">
 									<m:CustomListItem>
 										<m:HBox class="applicantFirstLayout">
 											<m:VBox alignItems="Center" class="sapUiSmallMarginEnd">
@@ -74,7 +80,6 @@
 												<m:Label text="{lastname}" />
 											</m:VBox>
 											<m:VBox alignItems="Left">
-												<m:Label text="{menu}" />
 												<m:Text text="{path:'comment', formatter:'ui.util.Formatter.comment'}" maxLines="3" class="applicantComment"/>
 											</m:VBox>
 										</m:HBox>

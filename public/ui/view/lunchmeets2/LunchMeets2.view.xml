@@ -20,14 +20,19 @@
 			id="LunchMeetsList"
 			mode="{device>/listMode}"
 			selectionChange="handleListSelect"
-			items="{path:'/0/lunchmeets', sorter:{path:'date', descending:true}}">
+			noDataText="{i18n>/NoDataFound}"
+			items="{path:'/0/lunchmeets', sorter: [
+			{path:'status', descending:false},
+			{path:'date', descending:true}]}">
 			<ObjectListItem
+				class="LunchMeetListItem"
+				icon="{restaurant/picture}"
 				type="{device>/listItemType}"
 				press="handleListItemPress"
 				title="{restaurant/name}"
 				number="{path:'lunchmeeters', formatter:'ui.util.Formatter.arrayLength'}">
 				<attributes>
-					<ObjectAttribute text="{path:'date', formatter:'ui.util.Formatter.date'}" />
+					<ObjectAttribute class="lunchmeetsDate" text="{path:'date', formatter:'ui.util.Formatter.date'}" />
 					<ObjectAttribute class="lunchmeetsAuthorLabel" text="{path:'lunchmeeters', formatter:'ui.util.Formatter.author'}" />
 				</attributes>
 				<firstStatus>
