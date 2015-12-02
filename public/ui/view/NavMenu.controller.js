@@ -17,7 +17,7 @@ sap.ui.controller("ui.view.NavMenu", {
 		        this.nav.to("dashboard.Dashboard");
 		        break;
 		    case i18nModel.oData.LetsLunchTitle:
-		        this.nav.to("letslunch.LetsLunch");
+		        this.nav.to("letslunch2.LetsLunch2");
 		        break;  
 		    case i18nModel.oData.LunchMeetsTitle:
 		        this.nav.to("lunchmeets.LunchMeets");

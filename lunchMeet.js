@@ -1,6 +1,10 @@
 // Define the "people" collection
 // people = new Mongo.Collection("people");
 
+
+// define the "lunchmeeters" collection
+lunchmeeters = new Mongo.Collection("lunchmeeters");
+
 // Server-only code
 if (Meteor.isServer){
 
@@ -16,6 +20,8 @@ if (Meteor.isServer){
                 next();
             });
         }
+
+
 
         // Seed our people collection with some starting data if it's empty
         // if (!people.find().count()){
@@ -35,10 +41,51 @@ if (Meteor.isServer){
         //         city: "Wollongong"
         //     });
         // }
+
+
+        // seed our lunchmeeters collection with some starting data if it's empty
+        
+        //  lunchmeeters.remove("FJwsNhKuB3ZsfFBEf");
+        // lunchmeeters.remove({username:"bchen"});
+        // lunchmeeters.remove({username:"yzhou"});
+        // lunchmeeters.remove({username:"lbarlet"});
+        // supprime la collection
+        lunchmeeters.remove("bchen");
+        if (!lunchmeeters.find().count()) {
+            lunchmeeters.insert({
+                username: "bchen",
+                password: "bchen*",
+                fullname: "Boris Chen",
+                shortname: "Boris",
+                picture: "ui/img/pics/bchen.png",
+                budget: 10                
+            });
+            lunchmeeters.insert({
+                username: "yzhou",
+                password: "yzhou*",
+                fullname: "Yang Zhou",
+                shortname: "Yang",
+                picture: "ui/img/pics/yzhou.png",
+                budget: 10                
+            });
+            lunchmeeters.insert({
+                username: "lbarlet",
+                password: "lbarlet*",
+                fullname: "Lionel Barlet",
+                shortname: "Lionel",
+                picture: "ui/img/pics/lbarlet.png",
+                budget: 10                
+            });
+        }
     });
 
     // Publish the people collection
     // Meteor.publish("people", function () {
     //   return people.find();
     // });
+
+    // publish the lunchmeeters collection
+    Meteor.publish("lunchmeeters", function () {
+        return lunchmeeters.find();
+    });
 }

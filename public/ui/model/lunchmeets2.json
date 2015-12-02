@@ -1,0 +1,18 @@
+{
+	"oId": "bchen1",
+	"date": "2015-12-01",
+	"lunchmeetersInvited": [
+		{
+			"username": "bchen",
+			"status": "author"
+		}
+		{
+			"username": "yzhou",
+			"status": "approver"
+		},
+		{
+			"username": "lbarlet",
+			"status": "approver"
+		}
+	]
+}

@@ -1,6 +1,9 @@
 jQuery.sap.declare("ui.Component");
+jQuery.sap.require("meteor-ui5.MeteorModel");
 
 sap.ui.core.UIComponent.extend("ui.Component", {
+
+	_oNewLunchMeeterModel: null,
 
 	onInit : function () {
 		sap.ui.getCore().getEventBus().subscribe('handleNavMenuListSelect', 'press',
@@ -79,7 +82,9 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"NoImageFound":"Image introuvable",
 			"NoDataFound":"Ah tiens, il manque des données ici !",
 
-			"Edit": "Edit"
+			"Edit": "Edit",
+
+			"LoginTitle": "Lunchmeeter, are you ready ?"
 		});
 		i18nModel.setDefaultBindingMode("OneWay");
 		oView.setModel(i18nModel, "i18n");
@@ -99,6 +104,27 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 		var cuisinesModel = new sap.ui.model.json.JSONModel("ui/model/cuisines.json");
 		cuisinesModel.setDefaultBindingMode("OneWay");
 		oView.setModel(cuisinesModel, "cuisines");
+
+
+
+
+		// build and set Lunchmeeters Meteor model from meteor subscription and cursor
+		var sSubscription = "lunchmeeters";
+        var oCursor = lunchmeeters.find();
+        var oLunchMeeters = new MeteorModel(
+                    sSubscription,
+                    oCursor,
+                    lunchmeeters          // Meteor collection required if we want two-way binding
+        );
+        oView.setModel(oLunchMeeters, "lunchmeeters");
+
+        // Create JSON model to store details of New LunchMeeter as entered on form
+        this._oNewLunchMeeterModel = new sap.ui.model.json.JSONModel({});
+        oView.setModel(this._oNewLunchMeeterModel, "newLunchMeeter");
+
+
+
+
 
 		// set device model
 		var deviceModel = new sap.ui.model.json.JSONModel({

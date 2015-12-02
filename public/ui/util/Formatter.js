@@ -32,5 +32,10 @@ ui.util.Formatter = {
 				return "Warning";
 			}
 		} 
-	}	
+	},
+
+	// enable login btn
+	loginEnable : function(name, pwd) {
+        return (name.trim() !== '') && (pwd.trim() !== '')
+    }	
 };
