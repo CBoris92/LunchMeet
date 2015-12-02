@@ -1,7 +1,9 @@
 {
 	"oId": "bchen1",
-	"date": "2015-12-01",
-	"lunchmeetersInvited": [
+	"createdAt": "2015-12-01",
+	"date": "2015-12-02",
+	"status": "hold",
+	"lunchmeeters": [
 		{
 			"username": "bchen",
 			"status": "author"
@@ -14,5 +16,12 @@
 			"username": "lbarlet",
 			"status": "approver"
 		}
-	]
+	],
+	"restaurant" : {
+		"name": "Our kebab gourmet",
+		"address": "20 rue du Paradis, Paris 10e",
+		"picture": "ui/img/restaurants/our.png",
+		"averageRating": 2,
+		"averagePrice": 11
+	}
 }

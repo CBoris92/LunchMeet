@@ -3,8 +3,11 @@ sap.ui.controller("ui.view.App", {
 	onInit : function () {
 		sap.ui.getCore().getEventBus().subscribe('nav', 'menu', 
 			function (channel, event, data){
-				if (lunchmeeters.find({username: data.user}).count()) {
-					this.to("NavMenu", this, data.isMaster); // navigate to Filter view
+				var oUserModel = data.userModel;
+				if (lunchmeeters.find({username: oUserModel.oData[0].username}).count()) {
+					this.to("NavMenu", this, data.isMaster); // navigate to NavMenu view
+					// define the model 
+					this.getView().setModel(oUserModel, 'lunchmeeters');
 				}
 			}.bind(this)
 		);

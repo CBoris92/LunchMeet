@@ -71,20 +71,19 @@ sap.ui.controller("ui.view.login.Login", {
 	                lunchmeeters.find({"username":_oUsername}),
 	                lunchmeeters        
 	            );
-	            var username = oUser.oData[0].username;
 				if (oUser.oData[0].password == _oPassword) {
-					console.log("logged user : "+ username);
+					sap.m.MessageToast.show("Bienvenue "+ oUser.oData[0].shortname +" !");
 					// go to Nav Menu page
-					sap.ui.getCore().getEventBus().publish('nav', 'menu', {isMaster: true, user: username});
+					sap.ui.getCore().getEventBus().publish('nav', 'menu', {isMaster: true, userModel: oUser});
 				} else {
-					console.log("Username ou password oublié ?");
+					sap.m.MessageToast.show("Username ou password oublié ? Contactes un admin");
 				}
 			} else {
 				// message d'erreur
-				console.log("Username ou password oublié ?");
+				sap.m.MessageToast.show("Username ou password oublié ? Contactes un admin");
 			}
 		} catch(e) {
-			console.log("Username ou password oublié ?");
+			sap.m.MessageToast.show("Username ou password oublié ? Contactes un admin");
 		}
 	}
 

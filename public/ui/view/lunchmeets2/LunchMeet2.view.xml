@@ -1,0 +1,99 @@
+<core:View
+	controllerName="ui.view.lunchmeets2.LunchMeet2"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	height="100%">
+
+	<m:Page
+		title="{i18n>/LunchMeetTitle}"
+		class="sapUiFioriObjectPage"
+		showNavButton="true"
+		navButtonPress="handleNavButtonPress">
+
+		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
+	        <headerTitle>
+	            <ObjectPageHeader headerDesign="Light" objectTitle="{/restaurant/name}" objectSubtitle="{
+								path: '/date',
+								formatter: 'ui.util.Formatter.date'
+							}" objectImageShape="Circle"
+	                              objectImageURI="{/restaurant/picture}"
+	                              isObjectIconAlwaysVisible="true"
+	                              isObjectTitleAlwaysVisible="true">
+	            </ObjectPageHeader>
+	        </headerTitle>
+
+	        <headerContent>
+				<l:VerticalLayout>
+	        		<m:Label text="{i18n>/RestaurantAddress}" design="Bold"/>
+		            <m:Label text="{/restaurant/address}" />
+				</l:VerticalLayout>
+				<l:VerticalLayout>
+	        		<m:Label text="{i18n>/AverageRating}" design="Bold"/>
+	        		<m:RatingIndicator enabled="false" maxValue="3" class="restaurantAverageRating sapUiSmallMarginBottom" value="{/restaurant/averageRating}" />
+				</l:VerticalLayout>
+				<l:VerticalLayout>
+	        		<m:Label text="{i18n>/AveragePrice}" design="Bold"/>
+		            <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
+		            	{path:'/budget'},
+		            	{path:'/restaurant/averagePrice'}
+		             ], formatter:'ui.util.Formatter.priceStatus'}"/>
+				</l:VerticalLayout>
+				
+	        </headerContent>
+
+	        <sections>
+	            <ObjectPageSection title="{i18n>/Infos}">
+	                <subSections>
+	                    <ObjectPageSubSection class="infosFirstSubSection" title=" ">
+	                    	<blocks>
+	                    		<l:VerticalLayout></l:VerticalLayout>
+	                    		<l:VerticalLayout class="infosFirstLayout">
+					        		<m:Label text="{i18n>/RestaurantPrice}" design="Bold"/>
+						            <m:ObjectNumber number="{/price}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
+		            	{path:'/budget'},
+		            	{path:'/price'}
+		             ], formatter:'ui.util.Formatter.priceStatus'}"/>
+							</l:VerticalLayout>
+							</blocks>
+	                    </ObjectPageSubSection>
+	                </subSections>
+	            </ObjectPageSection>
+
+	            <ObjectPageSection title="{i18n>/Users}">
+	            	<subSections>
+	            		<ObjectPageSubSection class="usersFirstSubSection" title=" ">
+	                        <blocks>
+	                        	<m:List noDataText="{i18n>/NoDataFound}" items="{/applicants}">
+									<m:CustomListItem>
+										<m:HBox class="applicantFirstLayout">
+											<m:VBox alignItems="Center" class="sapUiSmallMarginEnd">
+												<m:Image class="applicantImg" src="{picture}" alt="{i18n>/NoImageFound}" />
+												<m:Label text="{lastname}" />
+											</m:VBox>
+											<m:VBox alignItems="Left">
+												<m:Label text="{menu}" />
+												<m:Text text="{path:'comment', formatter:'ui.util.Formatter.comment'}" maxLines="3" class="applicantComment"/>
+											</m:VBox>
+										</m:HBox>
+									</m:CustomListItem>
+	                        	</m:List>
+	                        </blocks>
+	                    </ObjectPageSubSection>
+	            	</subSections>
+	            </ObjectPageSection>
+	        </sections>
+	    </ObjectPageLayout>
+
+	    <m:footer>
+	    	<m:Bar>
+	    		<m:contentRight>
+	    			<m:Button press="onSubmitDialog" text="{i18n>/SubmitReview}" icon="{icon>/SubmitReview}" />
+	    		</m:contentRight>
+	    	</m:Bar>
+	    </m:footer>
+
+	</m:Page>
+</core:View>

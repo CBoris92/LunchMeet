@@ -149,3 +149,57 @@
 .sapUxAPObjectPageHeaderContent.sapUxAPObjectPageHeaderContentDesign-Light.ui-helper-clearfix {
     padding-right: 1rem;
 }
+
+
+/* Request Status */
+.StatusInProgress, 
+.StatusRejected,
+.StatusForApproval,
+.StatusApproved{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.StatusInProgress .sapMObjStatusText, 
+.StatusRejected .sapMObjStatusText,
+.StatusForApproval .sapMObjStatusText,
+.StatusApproved .sapMObjStatusText{
+    color: white !important;
+    border-radius: 14px;
+    padding : 6px;
+    box-shadow: -2px 3px 2px 0px rgb(211,211,211);
+}
+
+.StatusInProgress .sapMObjStatusText{
+    background-color: #22A0D5;
+}
+
+.StatusRejected .sapMObjStatusText{
+    background-color: #D52222;
+}
+
+.StatusForApproval .sapMObjStatusText{
+    background-color: #E86A26;
+}
+
+.StatusApproved .sapMObjStatusText{
+    background-color: #28D61F;
+}
+
+.objectStatus {
+    height: 100%;
+}
+
+.sapMObjLStatusDiv {
+    height: 25px;
+    margin-top: 21px;
+}
+
+.lunchmeetsAuthorLabel>.sapMText {
+    font-size: 0.775rem !important;
+    font-style: italic;
+}
+
+/*.sapMText {
+    font-family: "Calibri", Sans-Serif;
+}*/

@@ -46,36 +46,113 @@ if (Meteor.isServer){
         // seed our lunchmeeters collection with some starting data if it's empty
         
         //  lunchmeeters.remove("FJwsNhKuB3ZsfFBEf");
-        // lunchmeeters.remove({username:"bchen"});
+        lunchmeeters.remove({username:"bchen"});
         // lunchmeeters.remove({username:"yzhou"});
         // lunchmeeters.remove({username:"lbarlet"});
         // supprime la collection
-        lunchmeeters.remove("bchen");
         if (!lunchmeeters.find().count()) {
-            lunchmeeters.insert({
-                username: "bchen",
-                password: "bchen*",
-                fullname: "Boris Chen",
-                shortname: "Boris",
-                picture: "ui/img/pics/bchen.png",
-                budget: 10                
-            });
-            lunchmeeters.insert({
-                username: "yzhou",
-                password: "yzhou*",
-                fullname: "Yang Zhou",
-                shortname: "Yang",
-                picture: "ui/img/pics/yzhou.png",
-                budget: 10                
-            });
-            lunchmeeters.insert({
-                username: "lbarlet",
-                password: "lbarlet*",
-                fullname: "Lionel Barlet",
-                shortname: "Lionel",
-                picture: "ui/img/pics/lbarlet.png",
-                budget: 10                
-            });
+            lunchmeeters.insert(
+                {
+                    "username": "bchen",
+                    "password": "bchen*",
+                    "fullname": "Boris Chen",
+                    "lastname": "Boris",
+                    "lunchmeets": [
+                        {
+                            "oId": "bchen1",
+                            "createdAt": "2015-12-01",
+                            "date": "2015-12-02",
+                            "status": "Envoyé",
+                            "lunchmeeters": [
+                                {
+                                    "username": "bchen",
+                                    "status": "author"
+                                },
+                                {
+                                    "username": "yzhou",
+                                    "status": "approver"
+                                }
+                            ],
+                            "restaurant" : {
+                                "name": "Our kebab gourmet",
+                                "address": "20 rue du Paradis, Paris 10e",
+                                "picture": "ui/img/restaurants/our.png",
+                                "averageRating": 2,
+                                "averagePrice": 11
+                            }
+                        },
+                        {
+                            "oId": "bchen2",
+                            "createdAt": "2015-12-01",
+                            "date": "2015-11-30",
+                            "status": "Accepté",
+                            "lunchmeeters": [
+                                {
+                                    "username": "bchen",
+                                    "status": "author"
+                                },
+                                {
+                                    "username": "yzhou",
+                                    "status": "approver"
+                                }
+                            ],
+                            "restaurant" : {
+                                "name": "Our kebab gourmet",
+                                "address": "20 rue du Paradis, Paris 10e",
+                                "picture": "ui/img/restaurants/our.png",
+                                "averageRating": 2,
+                                "averagePrice": 11
+                            }
+                        },
+                        {
+                            "oId": "bchen3",
+                            "createdAt": "2015-12-01",
+                            "date": "2015-12-04",
+                            "status": "Nope",
+                            "lunchmeeters": [
+                                {
+                                    "username": "bchen",
+                                    "status": "author"
+                                },
+                                {
+                                    "username": "yzhou",
+                                    "status": "approver"
+                                }
+                            ],
+                            "restaurant" : {
+                                "name": "Our kebab gourmet",
+                                "address": "20 rue du Paradis, Paris 10e",
+                                "picture": "ui/img/restaurants/our.png",
+                                "averageRating": 2,
+                                "averagePrice": 11
+                            }
+                        },
+                        {
+                            "oId": "bchen4",
+                            "createdAt": "2015-12-01",
+                            "date": "2015-11-29",
+                            "status": "Nope",
+                            "lunchmeeters": [
+                                {
+                                    "username": "bchen",
+                                    "status": "author"
+                                },
+                                {
+                                    "username": "yzhou",
+                                    "status": "approver"
+                                }
+                            ],
+                            "restaurant" : {
+                                "name": "Our kebab gourmet",
+                                "address": "20 rue du Paradis, Paris 10e",
+                                "picture": "ui/img/restaurants/our.png",
+                                "averageRating": 2,
+                                "averagePrice": 11
+                            }
+                        }
+                    ]
+                }             
+            );
         }
     });
 

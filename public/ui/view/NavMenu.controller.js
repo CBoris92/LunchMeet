@@ -20,7 +20,7 @@ sap.ui.controller("ui.view.NavMenu", {
 		        this.nav.to("letslunch2.LetsLunch2");
 		        break;  
 		    case i18nModel.oData.LunchMeetsTitle:
-		        this.nav.to("lunchmeets.LunchMeets");
+		        this.nav.to("lunchmeets2.LunchMeets2");
 		        break;
 		    case i18nModel.oData.PreferencesTitle:
 		        this.nav.to("preferences.Preferences");

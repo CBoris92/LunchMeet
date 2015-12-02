@@ -64,8 +64,9 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"NavMenuTitle":"Navigation",
 			"ShowHideMenu":"Show/Hide",
 
-			"Accept":"LunchMeetMe!",
+			"Accept":"Accepté",
 			"Decline":"Nope",
+			"Sent":"Envoyé",
 
 			"MessagePageHeader":"Bienvenue à LunchMeet",
 			"MessagePageDescription":"Générateur de rencontres à l'heure du déjeuner.",
@@ -84,7 +85,8 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 
 			"Edit": "Edit",
 
-			"LoginTitle": "Lunchmeeter, are you ready ?"
+			"LoginTitle": "Lunchmeeter, are you ready ?",
+
 		});
 		i18nModel.setDefaultBindingMode("OneWay");
 		oView.setModel(i18nModel, "i18n");
@@ -95,7 +97,7 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 		oView.setModel(usersModel, "users");
 
 		// set lunchmeets model
-		var lunchmeetsModel = new sap.ui.model.json.JSONModel("ui/model/lunchmeets.json");
+		var lunchmeetsModel = new sap.ui.model.json.JSONModel("ui/model/lunchmeeters.json");
 		lunchmeetsModel.setDefaultBindingMode("TwoWay");
 		oView.setModel(lunchmeetsModel, "lunchmeets");
 		sap.ui.getCore().setModel(lunchmeetsModel, "lunchmeets");
@@ -119,8 +121,8 @@ sap.ui.core.UIComponent.extend("ui.Component", {
         oView.setModel(oLunchMeeters, "lunchmeeters");
 
         // Create JSON model to store details of New LunchMeeter as entered on form
-        this._oNewLunchMeeterModel = new sap.ui.model.json.JSONModel({});
-        oView.setModel(this._oNewLunchMeeterModel, "newLunchMeeter");
+        // this._oNewLunchMeeterModel = new sap.ui.model.json.JSONModel({});
+        // oView.setModel(this._oNewLunchMeeterModel, "newLunchMeeter");
 
 
 

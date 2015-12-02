@@ -75,8 +75,8 @@
 		<m:footer>
 			<m:Bar>
 				<m:contentRight>
-					<m:Button text="Approve" type="Accept" icon="sap-icon://accept"/>
-					<m:Button text="Reject" type="Reject" icon="sap-icon://decline"/>
+					<m:Button tooltip="Envoyer l'invitation" text="Envoyer" type="Accept" icon="sap-icon://accept"/>
+					<m:Button type="Default" icon="sap-icon://decline"/>
 				</m:contentRight>
 			</m:Bar>
 		</m:footer>

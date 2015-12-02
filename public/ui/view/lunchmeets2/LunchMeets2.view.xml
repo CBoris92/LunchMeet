@@ -1,0 +1,43 @@
+<core:View
+	controllerName="ui.view.lunchmeets2.LunchMeets2"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" >
+	<Page
+		title="{i18n>/LunchMeetsTitle}"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="handleNavBackToMenu">
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<SearchField
+						search="handleSearch"
+						width="100%" >
+					</SearchField>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<List
+			id="LunchMeetsList"
+			mode="{device>/listMode}"
+			selectionChange="handleListSelect"
+			items="{path:'/0/lunchmeets', sorter:{path:'date', descending:true}}">
+			<ObjectListItem
+				type="{device>/listItemType}"
+				press="handleListItemPress"
+				title="{restaurant/name}"
+				number="{path:'lunchmeeters', formatter:'ui.util.Formatter.arrayLength'}">
+				<attributes>
+					<ObjectAttribute text="{path:'date', formatter:'ui.util.Formatter.date'}" />
+					<ObjectAttribute class="lunchmeetsAuthorLabel" text="{path:'lunchmeeters', formatter:'ui.util.Formatter.author'}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus class="objectStatus"
+						text="{status}"/>
+				</firstStatus>
+			</ObjectListItem>
+		</List>
+
+		<footer>			
+		</footer>
+	</Page>
+</core:View>

@@ -1,29 +1,32 @@
 {
 	"lunchmeeters" : [
-		{
-			"username": "bchen",
-			"fullname": "Boris Chen",
-			"lastname": "Boris",
-			"lunchmeets": [
-				{
-					"oId": "bchen1",
-					"date": "2015-12-01",
-					"lunchmeetersInvited": [
-						{
-							"username": "bchen",
-							"status": "author"
-						}
-						{
-							"username": "yzhou",
-							"status": "approver"
-						},
-						{
-							"username": "lbarlet",
-							"status": "approver"
-						}
-					]
-				}
-			]
-		}
+        {
+            "username": "bchen",
+            "password": "bchen*",
+            "fullname": "Boris Chen",
+            "lastname": "Boris",
+            "lunchmeets": [
+                {
+                    "oId": "bchen1",
+                    "createdAt": "2015-12-01",
+                    "date": "2015-12-02",
+                    "status": "hold",
+                    "lunchmeeters": [
+                        {
+                            "username": "bchen",
+                            "status": "author"
+                        },
+                        {
+                            "username": "yzhou",
+                            "status": "approver"
+                        },
+                        {
+                            "username": "lbarlet",
+                            "status": "approver"
+                        }
+                    ]
+                }
+            ]
+        } 
 	]
 }
