@@ -11,7 +11,7 @@
 		title="{i18n>/PreferencesTitle}"
 		class="sapUiFioriObjectPage"
 		showNavButton="{device>/isPhone}"
-		navButtonPress="handleNavButtonPress">
+		navButtonPress="handleNavBackToMenu">
 
 		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
 	        <!-- <headerTitle>

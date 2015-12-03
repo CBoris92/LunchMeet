@@ -8,6 +8,7 @@ sap.ui.controller("ui.view.App", {
 					this.to("NavMenu", this, data.isMaster); // navigate to NavMenu view
 					// define the model 
 					this.getView().setModel(oUserModel, 'lunchmeeters');
+					this.getView().setModel(new sap.ui.model.json.JSONModel({username:oUserModel.oData[0].username, lastname:oUserModel.oData[0].lastname}), 'loggedUser');
 				}
 			}.bind(this)
 		);
