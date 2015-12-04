@@ -3,7 +3,7 @@ jQuery.sap.require("sap.m.MessageBox");
 jQuery.sap.require("sap.m.MessageToast");
 jQuery.sap.require("sap.m.Dialog");
 
-sap.ui.controller("ui.view.lunchmeets2.LunchMeet2", {
+sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsDetail", {
 
 	/**
 	 *	Initialisation of the controller
@@ -16,6 +16,23 @@ sap.ui.controller("ui.view.lunchmeets2.LunchMeet2", {
 				this.handleLunchMeetModel(data);
 			}.bind(this)
 		);
+
+		if (sap.ui.getCore().getModel('device').oData.isPhone) {
+			this.getView().sId = "LunchmeetsDetail";
+		}
+	},
+
+	onBack : function () {
+		var sPreviousHash = sap.ui.core.routing.History.getInstance().getPreviousHash();
+
+		//The history contains a previous entry
+		if (sPreviousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			// There is no history!
+			// replace the current hash with page 1 (will not add an history entry)
+			// this.getOwnerComponent().getRouter().navTo("page1", null, true);
+		}
 	},
 
 	/**
@@ -34,7 +51,17 @@ sap.ui.controller("ui.view.lunchmeets2.LunchMeet2", {
 	 *
 	 */
 	handleNavButtonPress : function (evt) {
-		this.nav.back("lunchmeets2.LunchMeets2");
+		// this.nav.back("pages.lunchmeets.LunchmeetsMaster");
+		var sPreviousHash = sap.ui.core.routing.History.getInstance().getPreviousHash();
+
+		//The history contains a previous entry
+		if (sPreviousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			// There is no history!
+			// replace the current hash with page 1 (will not add an history entry)
+			this.getOwnerComponent().getRouter().navTo("menu", null, true);
+		}
 	},
 
 	/**
@@ -83,4 +110,9 @@ sap.ui.controller("ui.view.lunchmeets2.LunchMeet2", {
 		// once it is instantiated, opens the dialog
 		dialog.open();
 	},
+
+	toGoogleMapsInNewTab : function (evt) {
+		var oSource = evt.getSource();
+		window.open();
+	}
 });

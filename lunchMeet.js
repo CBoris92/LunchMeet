@@ -82,8 +82,13 @@ if (Meteor.isServer){
                             ],
                             "restaurant" : {
                                 "name": "Our kebab gourmet",
-                                "address": "20 rue du Paradis, Paris 10e",
-                                "picture": "ui/img/restaurants/our.png",
+                                "address": {
+                                    "street" :"15 Rue Martel",
+                                    "zip" :"75010",
+                                    "city" :"Paris",
+                                    "country" :"France"
+                                },
+                                "picture": "ui/img/taco.png",
                                 "averageRating": 2,
                                 "averagePrice": 11
                             }

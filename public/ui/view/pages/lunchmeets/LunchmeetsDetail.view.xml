@@ -1,5 +1,5 @@
 <core:View
-	controllerName="ui.view.lunchmeets2.LunchMeet2"
+	controllerName="ui.view.pages.lunchmeets.LunchmeetsDetail"
 	xmlns="sap.uxap"
 	xmlns:m="sap.m"
 	xmlns:l="sap.ui.layout"
@@ -10,9 +10,15 @@
 	<m:Page
 		title="{i18n>/LunchMeetTitle}"
 		class="sapUiFioriObjectPage"
-		showNavButton="true"
+		showNavButton="{device>/isPhone}"
 		navButtonPress="handleNavButtonPress">
-
+		<!-- <m:customHeader>
+			<m:Bar>
+				<m:contentLeft>
+					<m:Button icon="sap-icon://nav-back" press="onBack"/>
+				</m:contentLeft>
+			</m:Bar>
+		</m:customHeader> -->
 		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
 	        <headerTitle>
 	            <ObjectPageHeader headerDesign="Light" objectTitle="{/restaurant/name}" objectSubtitle="{
@@ -28,7 +34,10 @@
 	        <headerContent>
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/RestaurantAddress}" design="Bold"/>
-		            <m:Label text="{/restaurant/address}" />
+		            <m:Link  
+		            	target="_blank"
+		            	href="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.toGoogleMapsInNewTab' }"
+		            	text="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.address' }" />
 				</l:VerticalLayout>
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/AverageRating}" design="Bold"/>
@@ -55,7 +64,6 @@
 	                <subSections>
 	                    <ObjectPageSubSection class="infosFirstSubSection" title=" ">
 	                    	<blocks>
-	                    		<l:VerticalLayout></l:VerticalLayout>
 	                    		<l:VerticalLayout width="100%" class="infosFirstLayout">
 					        	<!-- <m:Label text="{i18n>/RestaurantPrice}" design="Bold"/> -->
 						           	<m:Carousel class="sapUiContentPadding" loop="true">

@@ -1,31 +1,19 @@
-sap.ui.controller("ui.view.App", {
+sap.ui.controller("ui.view.pages.lunchmeets.Lunchmeets", {
 
-	onInit : function () {
-		sap.ui.getCore().getEventBus().subscribe('nav', 'menu', 
-			function (channel, event, data){
-				var oUserModel = data.userModel;
-				if (lunchmeeters.find({username: oUserModel.oData[0].username}).count()) {
-					this.to("NavMenu", this, data.isMaster); // navigate to NavMenu view
-					// define the model 
-					this.getView().setModel(oUserModel, 'lunchmeeters');
-					this.getView().setModel(new sap.ui.model.json.JSONModel({username:oUserModel.oData[0].username, lastname:oUserModel.oData[0].lastname}), 'loggedUser');
-				}
-			}.bind(this)
-		);
-	},
+	onInit : function () {},
 	
 	/**
 	 * Navigates to another page
 	 * @param {string} pageId The id of the next page
 	 * @param {sap.ui.model.Context} context The data context to be applied to the next page (optional)
 	 */
-	to : function (pageId, context, isMaster, oUsername) {
+	to : function (pageId, context, isMaster, oTransitionName) {
 
 		var app = this.getView().app;
 		var page = null;
 		// load page on demand
 		if(!isMaster) {
-			isMaster = ("Master" === pageId);
+			isMaster = ("pages.lunchmeets.LunchmeetsMaster" === pageId);
 		}
 		
 		if (app.getPage(pageId, isMaster) === null) {
@@ -40,7 +28,7 @@ sap.ui.controller("ui.view.App", {
 		}
 		
 		// show the page
-		app.to(pageId);
+		app.to(pageId, oTransitionName);
 		
 		// set data context on the page
 		if (context) {
@@ -54,6 +42,7 @@ sap.ui.controller("ui.view.App", {
 	 * @param {string} pageId The id of the next page
 	 */
 	back : function (pageId) {
-		this.getView().app.backToPage(pageId);
+		this.getView().app.backToPage("pages.lunchmeets."+this.getView().app.getPreviousPage().getId());
+		// this.getView().app.backToPage(pageId);
 	}
 });

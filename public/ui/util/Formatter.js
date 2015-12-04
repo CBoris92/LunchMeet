@@ -65,20 +65,35 @@ ui.util.Formatter = {
 
     // set visible property of icons for budget of the restaurant
     setBudgetIcons : function (value) {
-    	sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconSmallBudget").setVisible(false);
-    	sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconMediumBudget").setVisible(false);
-    	sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconLargeBudget").setVisible(false);
+    	// sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconSmallBudget").setVisible(false);
+    	// sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconMediumBudget").setVisible(false);
+    	// sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconLargeBudget").setVisible(false);
 
-    	// var oBudget = this.getView().getModel().getProperty('budget');
-    	var oBudget2 = 8;
-    	if (value <= oBudget2) {sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconSmallBudget").setVisible(true);}
-    	else if (value > oBudget2 && value <= oBudget2 + 5) {
-    		sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconSmallBudget").setVisible(true);
-    		sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconMediumBudget").setVisible(true);
-    	} else {
-    		sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconSmallBudget").setVisible(true);
-	    	sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconMediumBudget").setVisible(true);
-	    	sap.ui.getCore().byId("lunchmeets2.LunchMeet2--idIconLargeBudget").setVisible(true);
-    	}
+    	// // var oBudget = this.getView().getModel().getProperty('budget');
+    	// var oBudget2 = 8;
+    	// if (value <= oBudget2) {sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconSmallBudget").setVisible(true);}
+    	// else if (value > oBudget2 && value <= oBudget2 + 5) {
+    	// 	sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconSmallBudget").setVisible(true);
+    	// 	sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconMediumBudget").setVisible(true);
+    	// } else {
+    	// 	sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconSmallBudget").setVisible(true);
+	    // 	sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconMediumBudget").setVisible(true);
+	    // 	sap.ui.getCore().byId("pages.lunchmeets.LunchmeetsDetail--idIconLargeBudget").setVisible(true);
+    	// }
+    },
+
+    formatMapUrl: function(sStreet, sZip, sCity, sCountry) {
+        var res = "https://maps.googleapis.com/maps/api/staticmap?zoom=14.5&size=500x300&markers="
+        + jQuery.sap.encodeURL(sStreet + ", " + sZip +  " " + sCity + ", " + sCountry);
+        return res;
+    },
+
+    toGoogleMapsInNewTab : function(sStreet, sZip, sCity, sCountry) {
+        return "https://www.google.com/maps/place/"
+        + jQuery.sap.encodeURL(sStreet + ", " + sZip +  " " + sCity + ", " + sCountry);
+    },
+
+    address : function (sStreet, sZip, sCity, sCountry) {
+        return sStreet + ", " + sCity;
     }
 };

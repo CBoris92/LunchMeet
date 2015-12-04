@@ -1,7 +1,7 @@
-sap.ui.jsview("ui.view.App", {
+sap.ui.jsview("ui.view.pages.lunchmeets.Lunchmeets", {
 
 	getControllerName: function () {
-		return "ui.view.App";
+		return "ui.view.pages.lunchmeets.Lunchmeets";
 	},
 	
 	createContent: function (oController) {
@@ -10,10 +10,10 @@ sap.ui.jsview("ui.view.App", {
 		this.setDisplayBlock(true);
 		
 		// create app
-		this.app = new sap.m.SplitApp("splitApp");
+		this.app = new sap.m.SplitApp("appLunchmeets");
 
 		// load the master page
-		var master = sap.ui.xmlview("Login", "ui.view.login.Login");
+		var master = sap.ui.xmlview("LunchmeetsMaster", "ui.view.pages.lunchmeets.LunchmeetsMaster");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
 
@@ -34,8 +34,8 @@ sap.ui.jsview("ui.view.App", {
 		// this.app.addPage(empty, false);
 
 		// load the message page
-		var messagePage = sap.ui.xmlview("MessagePage", "ui.view.fragments.MessagePage");
-		this.app.addPage(messagePage, false);
+		// var messagePage = sap.ui.xmlview("MessagePage", "ui.view.fragments.MessagePage");
+		// this.app.addPage(messagePage, false);
 		
 		return this.app;
 	}
