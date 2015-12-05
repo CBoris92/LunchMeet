@@ -22,7 +22,12 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsDetail", {
 		}
 	},
 
+	onAfterRendering : function () {
+		this.handleBarStyleClass();
+	},
+
 	onBack : function () {
+		// this.nav.back("pages.lunchmeets.LunchmeetsMaster");
 		var sPreviousHash = sap.ui.core.routing.History.getInstance().getPreviousHash();
 
 		//The history contains a previous entry
@@ -31,8 +36,24 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsDetail", {
 		} else {
 			// There is no history!
 			// replace the current hash with page 1 (will not add an history entry)
-			// this.getOwnerComponent().getRouter().navTo("page1", null, true);
+			this.getOwnerComponent().getRouter().navTo("menu", null, true);
 		}
+	},
+
+	handleBarStyleClass : function () {
+		// var oStatus = this.getView().getModel().getData().status;
+		// var oBar = this.getView().byId("LunchmeetsDetailCustomHeaderBar");
+		// switch (oStatus) {
+  //   		case this.getView().getModel('i18n').getProperty('/Sent') :
+  //   			oBar.addStyleClass('StatusInProgress');
+  //   			break;
+  //   		case this.getView().getModel('i18n').getProperty('/Accept') :
+  //   			oBar.addStyleClass('StatusApproved');
+  //   			break;
+  //   		case this.getView().getModel('i18n').getProperty('/Decline') : 
+  //   			oBar.addStyleClass('StatusRejected');
+  //   			break;
+  //   	}
 	},
 
 	/**
@@ -50,19 +71,19 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsDetail", {
 	 *	Handles navigation back to Worklist
 	 *
 	 */
-	handleNavButtonPress : function (evt) {
-		// this.nav.back("pages.lunchmeets.LunchmeetsMaster");
-		var sPreviousHash = sap.ui.core.routing.History.getInstance().getPreviousHash();
+	// handleNavButtonPress : function (evt) {
+	// 	// this.nav.back("pages.lunchmeets.LunchmeetsMaster");
+	// 	var sPreviousHash = sap.ui.core.routing.History.getInstance().getPreviousHash();
 
-		//The history contains a previous entry
-		if (sPreviousHash !== undefined) {
-			window.history.go(-1);
-		} else {
-			// There is no history!
-			// replace the current hash with page 1 (will not add an history entry)
-			this.getOwnerComponent().getRouter().navTo("menu", null, true);
-		}
-	},
+	// 	//The history contains a previous entry
+	// 	if (sPreviousHash !== undefined) {
+	// 		window.history.go(-1);
+	// 	} else {
+	// 		// There is no history!
+	// 		// replace the current hash with page 1 (will not add an history entry)
+	// 		this.getOwnerComponent().getRouter().navTo("menu", null, true);
+	// 	}
+	// },
 
 	/**
 	 *	Handles submit a review

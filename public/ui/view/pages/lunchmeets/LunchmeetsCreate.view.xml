@@ -10,7 +10,7 @@
 
 	<m:Page
 		title="{i18n>/LetsLunchTitle}"
-		showNavButton="{device>/isPhone}"
+		showNavButton="true"
 		navButtonPress="onBack">
 
 		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
@@ -42,9 +42,9 @@
 	                <subSections>
 	                    <ObjectPageSubSection class="" title=" ">
 	                    	<blocks>
-	                    		<m:VBox alignItems="Center" class="applicantFirstLayout">
-									<m:SearchField />
-								</m:VBox>
+	                    		<!-- <m:VBox width="100%" alignItems="Center" class="applicantFirstLayout"> -->
+									<m:SearchField width="100%"/>
+								<!-- </m:VBox> -->
 							</blocks>
 	                    </ObjectPageSubSection>
 	                </subSections>

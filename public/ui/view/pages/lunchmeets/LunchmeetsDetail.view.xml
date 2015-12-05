@@ -11,14 +11,17 @@
 		title="{i18n>/LunchMeetTitle}"
 		class="sapUiFioriObjectPage"
 		showNavButton="{device>/isPhone}"
-		navButtonPress="handleNavButtonPress">
-		<!-- <m:customHeader>
-			<m:Bar>
+		navButtonPress="onBack">
+		<m:customHeader>
+			<m:Bar id="LunchmeetsDetailCustomHeaderBar">
 				<m:contentLeft>
 					<m:Button icon="sap-icon://nav-back" press="onBack"/>
 				</m:contentLeft>
+				<m:contentMiddle>
+					<m:Label text="{/status}" design="Bold"/>
+				</m:contentMiddle>
 			</m:Bar>
-		</m:customHeader> -->
+		</m:customHeader>
 		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
 	        <headerTitle>
 	            <ObjectPageHeader headerDesign="Light" objectTitle="{/restaurant/name}" objectSubtitle="{
@@ -32,7 +35,6 @@
 	        </headerTitle>
 
 	        <headerContent>
-				
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/AverageRating}" design="Bold"/>
 	        		<m:RatingIndicator iconSize="1rem" enabled="false" maxValue="3" class="restaurantAverageRating sapUiSmallMarginBottom" value="{/restaurant/averageRating}" />
@@ -50,7 +52,6 @@
 			            <core:Icon id="idIconLargeBudget" src="lead-outdated" visible="false"/>
 		        	</m:HBox>
 				</l:VerticalLayout>
-				
 	        </headerContent>
 
 	        <sections>
@@ -99,6 +100,7 @@
 												<m:Label text="{lastname}" />
 											</m:VBox>
 											<m:VBox alignItems="Left">
+												<!-- <m:Text text="{status}" class="objectStatus"/> -->
 												<m:Text text="{path:'comment', formatter:'ui.util.Formatter.comment'}" maxLines="3" class="applicantComment"/>
 											</m:VBox>
 										</m:HBox>
@@ -115,8 +117,8 @@
 	    	<m:Bar>
 	    		<m:contentRight>
 	    			<!-- <m:Button press="onSubmitDialog" text="{i18n>/SubmitReview}" icon="{icon>/SubmitReview}" /> -->
-	    			<m:Button press="onSubmitDialog" text="Let's Lunch !" type="Accept" icon="sap-icon://accept" />
-	    			<m:Button press="onSubmitDialog" text="Nope" type="Reject" icon="sap-icon://decline" />
+	    			<m:Button visible="{parts: ['/status','/date'], formatter:'ui.util.Formatter.visibleBtn'}" press="onSubmitDialog" text="Let's Lunch !" type="Accept" icon="sap-icon://accept" />
+	    			<m:Button visible="{parts: ['/status','/date'], formatter:'ui.util.Formatter.visibleBtn'}" press="onSubmitDialog" text="Nope" type="Reject" icon="sap-icon://decline" />
 	    		</m:contentRight>
 	    	</m:Bar>
 	    </m:footer>

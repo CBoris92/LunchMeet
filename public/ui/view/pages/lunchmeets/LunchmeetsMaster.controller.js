@@ -59,12 +59,9 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
 
 		if (this.getView().getModel('device').oData.isPhone) {
 			// navigate
-			this.getOwnerComponent().getRouter().navTo("lunchmeetsDetail");
+			this.getOwnerComponent().getRouter().navTo("lunchmeetsDetail", null, null, "slide");
 		} else {this.nav.to("pages.lunchmeets.LunchmeetsDetail", context);}
 		// nav to detail page
-		
-		// var oParameters = {"OptionalProductId":"5"};
-		
 
 		// send the object data model through eventbus 
 		sap.ui.getCore().getEventBus().publish("handleLunchMeetModel", "setModel", context);

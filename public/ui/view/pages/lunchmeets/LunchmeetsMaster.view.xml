@@ -51,7 +51,7 @@
 		<footer>
 			<Bar>
 				<contentRight>
-					<Button type="Emphasized" text="Nouveau Lunchmeet" icon="sap-icon://meal" press="handleCreateLunchmeet" />
+					<Button type="Emphasized" text="Lunchmeet" icon="sap-icon://meal" press="handleCreateLunchmeet" />
 				</contentRight>
 			</Bar>
 		</footer>

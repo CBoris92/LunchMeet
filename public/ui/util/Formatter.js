@@ -95,5 +95,19 @@ ui.util.Formatter = {
 
     address : function (sStreet, sZip, sCity, sCountry) {
         return sStreet + ", " + sCity;
+    },
+
+    visibleBtn : function (value, date) {
+        var oFormatYyyymmdd = sap.ui.core.format.DateFormat.getInstance({pattern: "yyyy-MM-dd"});
+        var oDate = oFormatYyyymmdd.format(new Date(date));
+        var oToday = oFormatYyyymmdd.format(new Date());
+        if (oDate < oToday) {
+            return false;
+        } else {
+            if (value === "Accepté" || value === "Nope" || value === "Envoyé") {
+                return false;
+            }
+            return true;
+        }
     }
 };
