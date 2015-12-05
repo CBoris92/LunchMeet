@@ -46,5 +46,14 @@
 				</firstStatus>
 			</ObjectListItem>
 		</List>
+
+
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button type="Emphasized" text="Nouveau Lunchmeet" icon="sap-icon://meal" press="handleCreateLunchmeet" />
+				</contentRight>
+			</Bar>
+		</footer>
 	</Page>
 </core:View>

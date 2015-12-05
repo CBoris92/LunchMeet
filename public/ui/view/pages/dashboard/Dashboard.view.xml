@@ -18,8 +18,9 @@
 			</Bar>
 		</subHeader>
 
-		<Image class="sapUiSmallMargin" width="500px" height="300px" src="{ parts: [ '/address/street', '/address/zip', '/address/city', '/address/country' ], formatter: 'ui.util.Formatter.formatMapUrl' }" />
-
+		<VBox alignItems="Center" width="100%">
+			<Image class="sapUiSmallMargin" src="{ parts: [ '/address/street', '/address/zip', '/address/city', '/address/country' ], formatter: 'ui.util.Formatter.formatMapUrl' }" />
+		</VBox>
 		<!-- <vbm:GeoMap id="vbi" width="100%" height="100%"/> -->
 	</Page>
 </core:View>

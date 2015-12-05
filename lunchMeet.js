@@ -88,7 +88,7 @@ if (Meteor.isServer){
                                     "city" :"Paris",
                                     "country" :"France"
                                 },
-                                "picture": "ui/img/taco.png",
+                                "picture": "ui/img/restaurants/our.png",
                                 "averageRating": 2,
                                 "averagePrice": 11
                             }
@@ -114,8 +114,13 @@ if (Meteor.isServer){
                             ],
                             "restaurant" : {
                                 "name": "Ose african cuisine",
-                                "address": "20 rue du Paradis, Paris 10e",
-                                "picture": "ui/img/restaurants/our.png",
+                                "address": {
+                                    "street" :"15 Rue Martel",
+                                    "zip" :"75010",
+                                    "city" :"Paris",
+                                    "country" :"France"
+                                },
+                                "picture": "ui/img/restaurants/ose.png",
                                 "averageRating": 2,
                                 "averagePrice": 6
                             }
@@ -141,7 +146,12 @@ if (Meteor.isServer){
                             ],
                             "restaurant" : {
                                 "name": "Tortillas Mexican",
-                                "address": "20 rue du Paradis, Paris 10e",
+                                "address": {
+                                    "street" :"15 Rue Martel",
+                                    "zip" :"75010",
+                                    "city" :"Paris",
+                                    "country" :"France"
+                                },
                                 "picture": "ui/img/restaurants/our.png",
                                 "averageRating": 2,
                                 "averagePrice": 9
@@ -168,7 +178,12 @@ if (Meteor.isServer){
                             ],
                             "restaurant" : {
                                 "name": "Bulma",
-                                "address": "20 rue du Paradis, Paris 10e",
+                                "address": {
+                                    "street" :"15 Rue Martel",
+                                    "zip" :"75010",
+                                    "city" :"Paris",
+                                    "country" :"France"
+                                },
                                 "picture": "ui/img/restaurants/our.png",
                                 "averageRating": 2,
                                 "averagePrice": 112

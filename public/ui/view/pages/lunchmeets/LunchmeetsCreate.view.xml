@@ -1,0 +1,84 @@
+<core:View
+	controllerName="ui.view.pages.lunchmeets.LunchmeetsCreate"
+	xmlns:u="sap.ui.unified"
+	xmlns="sap.uxap"
+	xmlns:m="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	height="100%">
+
+	<m:Page
+		title="{i18n>/LetsLunchTitle}"
+		showNavButton="{device>/isPhone}"
+		navButtonPress="onBack">
+
+		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
+	        <!-- <headerTitle>
+	            <ObjectPageHeader headerDesign="Light" objectTitle="{/restaurant/name}" objectSubtitle="{
+								path: '/date',
+								formatter: 'ui.util.Formatter.date'
+							}" objectImageShape="Circle"
+	                              objectImageURI="{/restaurant/picture}"
+	                              isObjectIconAlwaysVisible="true"
+	                              isObjectTitleAlwaysVisible="true">
+	            </ObjectPageHeader>
+	        </headerTitle> -->
+
+	        <headerContent>
+	        	<m:VBox class="calendarLayout" alignItems="Center">
+	        		<m:Label design="Bold" text="Choisis une date" />
+					<u:CalendarDateInterval id="calendar" days="8" width="100%" select="handleCalendarSelect" />
+				</m:VBox>
+				<l:VerticalLayout>
+	        		<m:Label text="Date sélectionnée" design="Bold" />
+					<m:Text id="selectedDate" text="Quand les poules auront des dents.."/>
+				</l:VerticalLayout>
+				
+	        </headerContent>
+
+	        <sections>
+	            <ObjectPageSection title="Trouves un LunchMeeter">
+	                <subSections>
+	                    <ObjectPageSubSection class="" title=" ">
+	                    	<blocks>
+	                    		<m:VBox alignItems="Center" class="applicantFirstLayout">
+									<m:SearchField />
+								</m:VBox>
+							</blocks>
+	                    </ObjectPageSubSection>
+	                </subSections>
+	            </ObjectPageSection>
+
+	            <ObjectPageSection title="LunchMeeters invités">
+	            	<subSections>
+	            		<ObjectPageSubSection class="" title=" ">
+	                        <blocks>
+	                        	<m:List items="{lunchmeeters>/}">
+	                        		<m:CustomListItem>
+	                        			<m:VBox alignItems="Center" class="applicantFirstLayout">
+											<m:Image class="applicantImg" src="{lunchmeeters>picture}" alt="{i18n>/NoImageFound}" />
+											<m:Label text="{lunchmeeters>shortname}" />
+										</m:VBox>
+	                        		</m:CustomListItem>
+	                        	</m:List>
+	                        </blocks>
+	                    </ObjectPageSubSection>
+	            	</subSections>
+	            </ObjectPageSection>
+	        </sections>
+	    </ObjectPageLayout>
+
+		
+		
+
+		<m:footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button tooltip="Envoyer l'invitation" text="Envoyer" type="Accept" icon="sap-icon://accept"/>
+					<m:Button press="onBack" type="Reject" icon="sap-icon://decline"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:footer>
+	</m:Page>
+</core:View>

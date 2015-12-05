@@ -34,6 +34,11 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 					"target": "LunchmeetsDetail"
 				},
 				{
+					"name": "lunchmeetsCreate",
+					"pattern": "lunchmeets/create",
+					"target": "LunchmeetsCreate"
+				},
+				{
 					"name": "dashboard",
 					"pattern": "dashboard",
 					"target": "Dashboard"
@@ -54,6 +59,9 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 				},
 				"LunchmeetsDetail": {
 					"viewName": "pages.lunchmeets.LunchmeetsDetail"
+				},
+				"LunchmeetsCreate": {
+					"viewName": "pages.lunchmeets.LunchmeetsCreate"
 				},
 				"Dashboard": {
 					"viewName": "pages.dashboard.Dashboard"

@@ -32,13 +32,7 @@
 	        </headerTitle>
 
 	        <headerContent>
-				<l:VerticalLayout>
-	        		<m:Label text="{i18n>/RestaurantAddress}" design="Bold"/>
-		            <m:Link  
-		            	target="_blank"
-		            	href="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.toGoogleMapsInNewTab' }"
-		            	text="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.address' }" />
-				</l:VerticalLayout>
+				
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/AverageRating}" design="Bold"/>
 	        		<m:RatingIndicator iconSize="1rem" enabled="false" maxValue="3" class="restaurantAverageRating sapUiSmallMarginBottom" value="{/restaurant/averageRating}" />
@@ -60,26 +54,40 @@
 	        </headerContent>
 
 	        <sections>
-	            <ObjectPageSection title="Photos">
+	            <ObjectPageSection title="Lunch Map">
 	                <subSections>
 	                    <ObjectPageSubSection class="infosFirstSubSection" title=" ">
 	                    	<blocks>
-	                    		<l:VerticalLayout width="100%" class="infosFirstLayout">
-					        	<!-- <m:Label text="{i18n>/RestaurantPrice}" design="Bold"/> -->
+	                    		<!-- <l:VerticalLayout width="100%">
+					        	<m:Label text="{i18n>/RestaurantPrice}" design="Bold"/>
 						           	<m:Carousel class="sapUiContentPadding" loop="true">
 										<m:pages>
-											<m:Image backgroundSize="5em" src="ui/img/others/100x100/dislike_button1.png" />
-											<m:Image backgroundSize="5em" src="ui/img/others/100x100/like_button1.png" />
-											<m:Image backgroundSize="5em" src="ui/img/others/100x100/superlike_button1.png" />
+											<m:Image backgroundSize="5em" src="ui/img/others/dislike_button1.png" />
+											<m:Image backgroundSize="5em" src="ui/img/others/like_button1.png" />
+											<m:Image backgroundSize="5em" src="ui/img/others/superlike_button1.png" />
 										</m:pages>
 									</m:Carousel>
-							</l:VerticalLayout>
+									<m:TileContainer>
+										<m:tiles>
+										</m:tiles>
+									</m:TileContainer>
+								</l:VerticalLayout> -->
+
+								<l:VerticalLayout>
+					        		<m:Label class="sapUiTinyMarginBegin" text="{i18n>/RestaurantAddress}" design="Bold"/>
+						            <m:Link class="sapUiTinyMarginBegin"
+						            	target="_blank"
+						            	href="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.toGoogleMapsInNewTab' }"
+						            	text="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.address' }" />
+						            <m:Image width="100%" class="sapUiTinyMargin" 
+						            	src="{ parts: [ '/restaurant/address/street', '/restaurant/address/zip', '/restaurant/address/city', '/restaurant/address/country' ], formatter: 'ui.util.Formatter.formatMapUrl' }" />
+								</l:VerticalLayout>
 							</blocks>
 	                    </ObjectPageSubSection>
 	                </subSections>
 	            </ObjectPageSection>
 
-	            <ObjectPageSection title="Lunchmeeters">
+	            <ObjectPageSection title="Lunch Meeters">
 	            	<subSections>
 	            		<ObjectPageSubSection class="usersFirstSubSection" title=" ">
 	                        <blocks>
@@ -107,7 +115,7 @@
 	    	<m:Bar>
 	    		<m:contentRight>
 	    			<!-- <m:Button press="onSubmitDialog" text="{i18n>/SubmitReview}" icon="{icon>/SubmitReview}" /> -->
-	    			<m:Button press="onSubmitDialog" text="J'accepte !" type="Accept" icon="sap-icon://accept" />
+	    			<m:Button press="onSubmitDialog" text="Let's Lunch !" type="Accept" icon="sap-icon://accept" />
 	    			<m:Button press="onSubmitDialog" text="Nope" type="Reject" icon="sap-icon://decline" />
 	    		</m:contentRight>
 	    	</m:Bar>

@@ -90,6 +90,11 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
 
 		// handle status style class
 		this.handleStatusStyleClass();
+	},
+
+	handleCreateLunchmeet : function (evt) {
+		// var oSource = evt.getSource();
+		this.getOwnerComponent().getRouter().navTo("lunchmeetsCreate");
 	}
 
 });

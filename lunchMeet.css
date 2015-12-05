@@ -118,11 +118,6 @@
     margin-left: -3px;
 }
 
-.infosFirstLayout {
-    margin-left: 8px;
-}
-
-
 .infosFirstSubSection>
 .sapUiResponsiveMargin.sapUxAPBlockContainer.ui-helper-clearfix>
 .sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridMedia-Std-Desktop.sapUiRespGridVSpace1>
@@ -132,6 +127,10 @@
 .sapUiRespGrid.sapUiRespGridHSpace1.sapUiRespGridMedia-Std-Desktop.sapUiRespGridVSpace1>
 .sapUiRespGridSpanL4.sapUiRespGridSpanM6.sapUiRespGridSpanS12.sapUiRespGridSpanXL3 {
 	width: 100%;
+}
+
+.infosFirstSubSection {
+    margin-top: 10px;
 }
 
 
