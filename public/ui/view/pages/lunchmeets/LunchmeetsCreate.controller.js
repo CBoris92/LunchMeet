@@ -8,6 +8,9 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsCreate", {
 	onInit: function() {
 		this.oFormatYyyymmdd = sap.ui.core.format.DateFormat.getInstance({pattern: "yyyy-MM-dd"});
 		this.oFormatEeeemmdyyy =  sap.ui.core.format.DateFormat.getInstance({pattern: "EEEE, d MMMM yyyy"});
+
+		// var myButton = sap.ui.htmlfragment("ui.view.pages.fragments.MaterialAddButton", this); 
+		// this.getView().byId("CreatePageId").addContent(myButton);
 	},
 
 	/**

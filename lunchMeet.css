@@ -103,10 +103,6 @@
     width: 50px;
 }
 
-.applicantFirstLayout {
-	padding-top: 10px;
-}
-
 .applicantComment {
 	font-family: "Calibri", Sans-Serif;
 	font-size: 13px;
@@ -224,4 +220,24 @@
     position: relative;
     top: -26px;
     left: 62px;
+}
+
+
+/* MDL - Floating Action Button */
+/*.mdl-layout {
+    align-items: center;
+    justify-content: center;
+}
+.mdl-layout__content {
+    padding: 24px;
+    flex: none;
+}*/
+.mdl-button {
+    background-color: #b0120a!important;
+    float: right;
+    position: absolute !important;
+    bottom: 0;
+    right: 0;
+    margin-right: 18px !important;
+    margin-bottom: 18px !important;
 }

@@ -15,19 +15,19 @@
 		<m:customHeader>
 			<m:Bar id="LunchmeetsDetailCustomHeaderBar">
 				<m:contentLeft>
-					<m:Button icon="sap-icon://nav-back" press="onBack"/>
+					<m:Button visible="{device>/isPhone}" icon="sap-icon://nav-back" press="onBack"/>
 				</m:contentLeft>
-				<m:contentMiddle>
+				<!-- <m:contentMiddle>
 					<m:Label text="{/status}" design="Bold"/>
-				</m:contentMiddle>
+				</m:contentMiddle> -->
 			</m:Bar>
 		</m:customHeader>
 		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
 	        <headerTitle>
 	            <ObjectPageHeader headerDesign="Light" objectTitle="{/restaurant/name}" objectSubtitle="{
 								path: '/date',
-								formatter: 'ui.util.Formatter.date'
-							}" objectImageShape="Circle"
+								formatter: 'ui.util.Formatter.date'}"
+								  objectImageShape="Circle"
 	                              objectImageURI="{/restaurant/picture}"
 	                              isObjectIconAlwaysVisible="true"
 	                              isObjectTitleAlwaysVisible="true">
@@ -42,10 +42,6 @@
 				<l:VerticalLayout>
 	        		<m:Label text="{i18n>/Budget}" design="Bold"/>
 	        		<core:InvisibleText text="{path:'/restaurant/averagePrice', formatter:'ui.util.Formatter.setBudgetIcons'}" />
-		           <!--  <m:ObjectNumber number="{/restaurant/averagePrice}" numberUnit="{/priceUnit}" emphasized="false" state="{parts : [
-		            	{path:'/budget'},
-		            	{path:'/restaurant/averagePrice'}
-		             ], formatter:'ui.util.Formatter.priceStatus'}"/> -->
 		             <m:HBox alignItems="">
 			            <core:Icon id="idIconSmallBudget" src="lead-outdated" visible="false"/>
 			            <core:Icon id="idIconMediumBudget" src="lead-outdated" visible="false"/>
@@ -59,22 +55,7 @@
 	                <subSections>
 	                    <ObjectPageSubSection class="infosFirstSubSection" title=" ">
 	                    	<blocks>
-	                    		<!-- <l:VerticalLayout width="100%">
-					        	<m:Label text="{i18n>/RestaurantPrice}" design="Bold"/>
-						           	<m:Carousel class="sapUiContentPadding" loop="true">
-										<m:pages>
-											<m:Image backgroundSize="5em" src="ui/img/others/dislike_button1.png" />
-											<m:Image backgroundSize="5em" src="ui/img/others/like_button1.png" />
-											<m:Image backgroundSize="5em" src="ui/img/others/superlike_button1.png" />
-										</m:pages>
-									</m:Carousel>
-									<m:TileContainer>
-										<m:tiles>
-										</m:tiles>
-									</m:TileContainer>
-								</l:VerticalLayout> -->
-
-								<l:VerticalLayout>
+	                    		<l:VerticalLayout>
 					        		<m:Label class="sapUiTinyMarginBegin" text="{i18n>/RestaurantAddress}" design="Bold"/>
 						            <m:Link class="sapUiTinyMarginBegin"
 						            	target="_blank"
@@ -100,7 +81,6 @@
 												<m:Label text="{lastname}" />
 											</m:VBox>
 											<m:VBox alignItems="Left">
-												<!-- <m:Text text="{status}" class="objectStatus"/> -->
 												<m:Text text="{path:'comment', formatter:'ui.util.Formatter.comment'}" maxLines="3" class="applicantComment"/>
 											</m:VBox>
 										</m:HBox>
@@ -116,7 +96,6 @@
 	    <m:footer>
 	    	<m:Bar>
 	    		<m:contentRight>
-	    			<!-- <m:Button press="onSubmitDialog" text="{i18n>/SubmitReview}" icon="{icon>/SubmitReview}" /> -->
 	    			<m:Button visible="{parts: ['/status','/date'], formatter:'ui.util.Formatter.visibleBtn'}" press="onSubmitDialog" text="Let's Lunch !" type="Accept" icon="sap-icon://accept" />
 	    			<m:Button visible="{parts: ['/status','/date'], formatter:'ui.util.Formatter.visibleBtn'}" press="onSubmitDialog" text="Nope" type="Reject" icon="sap-icon://decline" />
 	    		</m:contentRight>

@@ -19,7 +19,6 @@ sap.ui.core.UIComponent.extend("ui.Component", {
 			"routes": [
 				{
 					"name": "menu",
-					// empty hash - normally the start page
 					"pattern": "",
 					"target": "Menu"
 				},				

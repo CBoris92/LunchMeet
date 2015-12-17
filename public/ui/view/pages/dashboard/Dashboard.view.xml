@@ -2,7 +2,8 @@
 	controllerName="ui.view.pages.dashboard.Dashboard"
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
-	xmlns:vbm="sap.ui.vbm" >
+	xmlns:vbm="sap.ui.vbm"
+	xmlns:l="sap.ui.layout" >
 	<Page
 		title="{i18n>/DashboardTitle}"
 		showNavButton="true"
@@ -17,10 +18,41 @@
 				</contentLeft>
 			</Bar>
 		</subHeader>
-
+<!-- 
 		<VBox alignItems="Center" width="100%">
 			<Image class="sapUiSmallMargin" src="{ parts: [ '/address/street', '/address/zip', '/address/city', '/address/country' ], formatter: 'ui.util.Formatter.formatMapUrl' }" />
-		</VBox>
-		<!-- <vbm:GeoMap id="vbi" width="100%" height="100%"/> -->
+		</VBox> -->
+
+
+		<!-- <l:HorizontalLayout>
+			<Button icon="sap-icon://cart" />
+			<l:VerticalLayout>
+				<Label text="Lot"/>
+				<Label text="Prix"/>
+			</l:VerticalLayout>
+		</l:HorizontalLayout> -->
+
+		<!-- <l:HorizontalLayout width="100px"> -->
+<!-- 			<HBox width="200px">
+				<VBox alignItems="Start">
+					<Button icon="sap-icon://cart" />
+				</VBox>
+				<VBox alignItems="End">
+					<Label text="Lot"/>
+					<Label text="Prix"/>
+				</VBox>
+			</HBox> -->
+		<!-- </l:HorizontalLayout> -->
+
+
+		<!-- <Button icon="sap-icon://message-information" /> -->
+
+		<core:Icon
+			src="sap-icon://message-information"
+			hoverColor="#8875E7"
+			color=""
+			tooltip="HierarchieProduitL1 > HierarchieProduitL2 > HierarchieProduitL3" />
+
+
 	</Page>
 </core:View>

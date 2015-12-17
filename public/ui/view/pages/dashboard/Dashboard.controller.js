@@ -29,4 +29,6 @@ sap.ui.controller("ui.view.pages.dashboard.Dashboard", {
 			this.getOwnerComponent().getRouter().navTo("menu", null, true);
 		}
 	}
+
+
 });

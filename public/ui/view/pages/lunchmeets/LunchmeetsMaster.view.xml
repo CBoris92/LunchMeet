@@ -1,7 +1,8 @@
 <core:View
 	controllerName="ui.view.pages.lunchmeets.LunchmeetsMaster"
 	xmlns="sap.m"
-	xmlns:core="sap.ui.core" >
+	xmlns:core="sap.ui.core" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page
 		title="{i18n>/LunchmeetsTitle}"
 		showNavButton="true"
@@ -10,6 +11,7 @@
 			<Bar>
 				<contentLeft>
 					<SearchField
+						liveChange="handleLiveChange"
 						search="handleSearch"
 						width="100%" >
 					</SearchField>
@@ -17,9 +19,8 @@
 			</Bar>
 		</subHeader>
 
-
-
-
+		<html:div class="mdl-layout mdl-js-layout">
+		  	<html:main class="mdl-layout__content">
 
 		<List
 			id="LunchmeetsList"
@@ -47,13 +48,17 @@
 			</ObjectListItem>
 		</List>
 
+				<html:button id="NewLunchmeetBtnId" class="mdl-button mdl-button--fab mdl-button--primary"><html:i class="material-icons">add</html:i></html:button> 
+	    	</html:main>
+		</html:div>
 
-		<footer>
+
+		<!-- <footer>
 			<Bar>
 				<contentRight>
 					<Button type="Emphasized" text="Lunchmeet" icon="sap-icon://meal" press="handleCreateLunchmeet" />
 				</contentRight>
 			</Bar>
-		</footer>
+		</footer> -->
 	</Page>
 </core:View>

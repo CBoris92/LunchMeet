@@ -11,7 +11,22 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
             lunchmeeters        
         );
         this.getView().setModel(oUserModel);
+        this.searchTimeout = null;
 
+
+        
+
+
+	},
+
+	onAfterRendering : function () {
+		this.handleStatusStyleClass();
+
+		var myViewId = this.getView().getId()+ "--";
+        $("#"+myViewId+"NewLunchmeetBtnId").click(function() {
+        	console.log("Button clicked");
+        	this.handleCreateLunchmeet();
+        }.bind(this));
 	},
 
 	onBack : function () {
@@ -25,10 +40,6 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
 			// replace the current hash with page 1 (will not add an history entry)
 			this.getOwnerComponent().getRouter().navTo("menu", null, true);
 		}
-	},
-
-	onAfterRendering : function () {
-		this.handleStatusStyleClass();
 	},
 
 	handleStatusStyleClass : function () {
@@ -54,12 +65,12 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
     	}
 	},
 
-		handleListSelect : function (evt) {
+	handleListSelect : function (evt) {
 		var context = (evt.getParameter("listItem").getBindingContext() || evt.getSource().getBindingContext());
 
 		if (this.getView().getModel('device').oData.isPhone) {
 			// navigate
-			this.getOwnerComponent().getRouter().navTo("lunchmeetsDetail", null, null, "slide");
+			this.getOwnerComponent().getRouter().navTo("lunchmeetsDetail", null, null, "fade");
 		} else {this.nav.to("pages.lunchmeets.LunchmeetsDetail", context);}
 		// nav to detail page
 
@@ -70,11 +81,10 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
 		this.getView().byId('LunchmeetsList').setSelectedItem(evt.getParameter("listItem"), false);
 	},
 
-	handleSearch : function (evt) {
-		
+    handleSearch : function (evt) {
+		var query = evt.getParameter("query");
 		// create model filter
 		var filters = [];
-		var query = evt.getParameter("query");
 		if (query && query.length > 0) {
 			var filter = new sap.ui.model.Filter("restaurant/name", sap.ui.model.FilterOperator.Contains, query);
 			filters.push(filter);
@@ -87,6 +97,30 @@ sap.ui.controller("ui.view.pages.lunchmeets.LunchmeetsMaster", {
 
 		// handle status style class
 		this.handleStatusStyleClass();
+	},
+
+	handleLiveChange : function (evt) {
+		var query = evt.getParameter("newValue");
+
+		if (this.searchTimeout !== null) {
+	      clearTimeout(this.searchTimeout);
+	    }
+	    this.searchTimeout = setTimeout(function() { 
+			// create model filter
+			var filters = [];
+			if (query && query.length > 0) {
+				var filter = new sap.ui.model.Filter("restaurant/name", sap.ui.model.FilterOperator.Contains, query);
+				filters.push(filter);
+			}
+			
+			// update list binding
+			var list = this.getView().byId("LunchmeetsList");
+			var binding = list.getBinding("items");
+			binding.filter(filters);
+
+			// handle status style class
+			this.handleStatusStyleClass();
+		}.bind(this), 500);
 	},
 
 	handleCreateLunchmeet : function (evt) {

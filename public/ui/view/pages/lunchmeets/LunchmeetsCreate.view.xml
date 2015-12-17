@@ -6,13 +6,13 @@
 	xmlns:l="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form"
 	xmlns:core="sap.ui.core"
-	height="100%">
-
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	height="100%">	
 	<m:Page
 		title="{i18n>/LetsLunchTitle}"
 		showNavButton="true"
 		navButtonPress="onBack">
-
+		
 		<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false">
 	        <!-- <headerTitle>
 	            <ObjectPageHeader headerDesign="Light" objectTitle="{/restaurant/name}" objectSubtitle="{
@@ -34,17 +34,38 @@
 	        		<m:Label text="Date sélectionnée" design="Bold" />
 					<m:Text id="selectedDate" text="Quand les poules auront des dents.."/>
 				</l:VerticalLayout>
-				
 	        </headerContent>
 
 	        <sections>
 	            <ObjectPageSection title="Trouves un LunchMeeter">
 	                <subSections>
-	                    <ObjectPageSubSection class="" title=" ">
+	                    <ObjectPageSubSection class="" title="Suggérés">
 	                    	<blocks>
-	                    		<!-- <m:VBox width="100%" alignItems="Center" class="applicantFirstLayout"> -->
+	                    		<m:VBox width="100%" alignItems="" class="sapUiSmallMarginTop"> 
+									<m:List  width="100%" items="{lunchmeeter>/}">
+										<m:CustomListItem  width="100%">
+											<m:VBox width="100%" alignItems="">
+												<m:Image class="applicantImg" src="{lunchmeeter>picture}" alt="{i18n>/NoImageFound}" />
+												<m:Label text="{lunchmeeter>fullname}" />
+											</m:VBox>
+										</m:CustomListItem>	
+									</m:List>
+								</m:VBox>
+							</blocks>
+	                    </ObjectPageSubSection>
+	                    <ObjectPageSubSection class="" title="Recherchés">
+	                    	<blocks>
+	                    		<m:VBox width="100%" alignItems="" class="sapUiSmallMarginTop"> 
 									<m:SearchField width="100%"/>
-								<!-- </m:VBox> -->
+									<m:List  width="100%" items="{lunchmeeter>/}">
+										<m:CustomListItem  width="100%">
+											<m:VBox width="100%" alignItems="">
+												<m:Image class="applicantImg" src="{lunchmeeter>picture}" alt="{i18n>/NoImageFound}" />
+												<m:Label text="{lunchmeeter>fullname}" />
+											</m:VBox>
+										</m:CustomListItem>	
+									</m:List>
+								</m:VBox>
 							</blocks>
 	                    </ObjectPageSubSection>
 	                </subSections>
@@ -54,11 +75,11 @@
 	            	<subSections>
 	            		<ObjectPageSubSection class="" title=" ">
 	                        <blocks>
-	                        	<m:List items="{lunchmeeters>/}">
+	                        	<m:List items="{newLunchmeet>/}">
 	                        		<m:CustomListItem>
 	                        			<m:VBox alignItems="Center" class="applicantFirstLayout">
-											<m:Image class="applicantImg" src="{lunchmeeters>picture}" alt="{i18n>/NoImageFound}" />
-											<m:Label text="{lunchmeeters>shortname}" />
+											<m:Image class="applicantImg" src="{newLunchmeet>picture}" alt="{i18n>/NoImageFound}" />
+											<m:Label text="{newLunchmeet>lastname}" />
 										</m:VBox>
 	                        		</m:CustomListItem>
 	                        	</m:List>
@@ -69,16 +90,14 @@
 	        </sections>
 	    </ObjectPageLayout>
 
-		
-		
-
 		<m:footer>
 			<m:Bar>
 				<m:contentRight>
 					<m:Button tooltip="Envoyer l'invitation" text="Envoyer" type="Accept" icon="sap-icon://accept"/>
-					<m:Button press="onBack" type="Reject" icon="sap-icon://decline"/>
+					<m:Button press="onBack" text="Annuler" type="Reject" icon="sap-icon://decline"/>
 				</m:contentRight>
 			</m:Bar>
 		</m:footer>
+		
 	</m:Page>
 </core:View>
